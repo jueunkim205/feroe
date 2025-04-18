@@ -76,7 +76,6 @@ header nav ul {
   gap: 2vw;
   flex: 1;
   box-sizing: border-box;
-  margin: 0 auto;
 }
 
 header nav ul li{
