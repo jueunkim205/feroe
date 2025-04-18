@@ -53,8 +53,8 @@ header nav a {
 
 header nav .logo h1 {
   font-family: "Inter", sans-serif;
-  margin-left:3rem;
-  font-size: 5rem;
+  margin-left:2rem;
+  font-size: 4rem;
   letter-spacing: -.3rem;
   font-weight: 400;
   /* color: #009ee3; */
@@ -64,15 +64,15 @@ header nav .logo h1 {
 }
 
 header nav .logo img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 header nav ul {
-  padding-top: 3rem;
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
-  gap: 3vw;
+  gap: 2vw;
   flex: 1;
   box-sizing: border-box;
 }
@@ -87,6 +87,8 @@ header nav ul>li a {
   display: block;
   padding: 3px 15px;
   font-size: 2rem;
+  font-family: Pretendard, sans-serif;
+
 }
 
 header nav ul li>a:hover:after {
