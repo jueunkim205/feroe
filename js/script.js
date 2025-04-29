@@ -122,7 +122,7 @@ playPauseBtn.addEventListener("click", function () {
 /******************** section2 ********************** */
 
 // Swiper 세팅
-var s1Swiper = new Swiper(".mySwiper", {
+var s2Swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 0,
   centeredSlides: true, // ★ 추가! 항상 가운데로 맞춤
@@ -137,9 +137,10 @@ var s1Swiper = new Swiper(".mySwiper", {
   },
 });
 
+let sec2SwiperSlide = document.querySelectorAll(".section2 .swiper-slide")
 // 슬라이드 이미지 넣기
-document.querySelectorAll(".swiper-slide").forEach(function (v, k) {
-  v.querySelector("img").src = `./images/test/img0${(k % 5) + 1}.jpg`;
+sec2SwiperSlide.forEach(function (v, k) {
+  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sub2/img0${(k % sec2SwiperSlide.length) + 1}.jpg)`;
 });
 
 // tag 클릭 시 swiper 이동 + active 처리
@@ -147,7 +148,7 @@ const tagItems = document.querySelectorAll(".tag li");
 tagItems.forEach(function (v, k) {
   v.addEventListener("click", function (e) {
     e.preventDefault();
-    s1Swiper.slideToLoop(k, 500); // ★ 현재 index로 이동
+    s2Swiper.slideToLoop(k, 500); // ★ 현재 index로 이동
     /**
      * swiper.slideToLoop(index, speed, runCallbacks)
      * .slideTo와 동일하지만 활성화된 루프와 함께 사용되는 경우입니다.
@@ -164,8 +165,8 @@ tagItems.forEach(function (v, k) {
 // big 이미지 업데이트 함수
 function updateBigImage() {
   const bigImg = document.querySelector(".big");
-  const middleIndex = s1Swiper.activeIndex;
-  const middleSlide = s1Swiper.slides[middleIndex];
+  const middleIndex = s2Swiper.activeIndex;
+  const middleSlide = s2Swiper.slides[middleIndex];
   const currentImg = middleSlide ? middleSlide.querySelector("img") : null;
 
   if (currentImg) {
@@ -177,8 +178,15 @@ function updateBigImage() {
   }
 }
 
-// 슬라이드 변경될 때마다 big 이미지 업데이트
-s1Swiper.on("slideChange", updateBigImage);
 
 // 초기 big 이미지 세팅
-updateBigImage();
+s2Swiper.on("slideChange", function () {
+  updateBigImage();
+
+  // 현재 realIndex에 해당하는 tag li만 active
+  const realIndex = s2Swiper.realIndex;
+
+  tagItems.forEach(function (item, idx) {
+    item.classList.toggle("active", idx === realIndex);
+  });
+});
