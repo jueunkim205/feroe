@@ -1,9 +1,5 @@
 $(function () {
-
-
-
-/******************** header ********************** */
-
+  /******************** header ********************** */
 
   const imgSources = {
     sub1: [
@@ -42,12 +38,12 @@ $(function () {
   // 전체 서브메뉴 가리기
   function noneSubMenu() {
     subMenu.forEach(function (v) {
-      v.classList.remove('on')
+      v.classList.remove("on");
     });
 
-    mainMenuLi.forEach(function(v){
-      v.classList.remove('on')
-    })
+    mainMenuLi.forEach(function (v) {
+      v.classList.remove("on");
+    });
   }
 
   noneSubMenu();
@@ -55,22 +51,19 @@ $(function () {
   mainMenuLi.forEach(function (v, k) {
     v.addEventListener("mouseenter", function () {
       noneSubMenu();
-      subMenu[k].classList.add('on');
-      this.classList.add('on')
+      subMenu[k].classList.add("on");
+      this.classList.add("on");
     });
   });
 
-  document.querySelector("nav").addEventListener('mouseenter', function(){
-    this.classList.add('on')
-  })
+  document.querySelector("nav").addEventListener("mouseenter", function () {
+    this.classList.add("on");
+  });
   document.querySelector("nav").addEventListener("mouseleave", function () {
     noneSubMenu();
-    this.classList.remove('on')
+    this.classList.remove("on");
   });
 });
-
-
-
 
 /******************** section1 ********************** */
 
@@ -126,13 +119,12 @@ playPauseBtn.addEventListener("click", function () {
   }
 });
 
-
 /******************** section2 ********************** */
 
- // Swiper 세팅
- var s1Swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
+// Swiper 세팅
+var s1Swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 0,
   centeredSlides: true, // ★ 추가! 항상 가운데로 맞춤
   loop: true,
   pagination: {
@@ -146,47 +138,47 @@ playPauseBtn.addEventListener("click", function () {
 });
 
 // 슬라이드 이미지 넣기
-document.querySelectorAll('.swiper-slide').forEach(function (v, k) {
-  v.querySelector('img').src = `./images/test/img0${(k % 5) + 1}.jpg`;
+document.querySelectorAll(".swiper-slide").forEach(function (v, k) {
+  v.querySelector("img").src = `./images/test/img0${(k % 5) + 1}.jpg`;
 });
 
 // tag 클릭 시 swiper 이동 + active 처리
-const tagItems = document.querySelectorAll('.tag li');
+const tagItems = document.querySelectorAll(".tag li");
 tagItems.forEach(function (v, k) {
-  v.addEventListener('click', function (e) {
+  v.addEventListener("click", function (e) {
     e.preventDefault();
     s1Swiper.slideToLoop(k, 500); // ★ 현재 index로 이동
-  /**
-   * swiper.slideToLoop(index, speed, runCallbacks)
-   * .slideTo와 동일하지만 활성화된 루프와 함께 사용되는 경우입니다.
-   * 따라서 이 메서드는 전달된 인덱스와 일치하는 realIndex가 있는 슬라이드로 이동합니다.
-  **/
+    /**
+     * swiper.slideToLoop(index, speed, runCallbacks)
+     * .slideTo와 동일하지만 활성화된 루프와 함께 사용되는 경우입니다.
+     * 따라서 이 메서드는 전달된 인덱스와 일치하는 realIndex가 있는 슬라이드로 이동합니다.
+     **/
 
     tagItems.forEach(function (item) {
-      item.classList.remove('active');
+      item.classList.remove("active");
     });
-    v.classList.add('active');
+    v.classList.add("active");
   });
 });
 
 // big 이미지 업데이트 함수
 function updateBigImage() {
-  const bigImg = document.querySelector('.big img');
+  const bigImg = document.querySelector(".big");
   const middleIndex = s1Swiper.activeIndex;
   const middleSlide = s1Swiper.slides[middleIndex];
-  const currentImg = middleSlide ? middleSlide.querySelector('img') : null;
+  const currentImg = middleSlide ? middleSlide.querySelector("img") : null;
 
-  if (currentImg) { // currentImg가 null이 아닌 경우
-    bigImg.classList.add('fade');
+  if (currentImg) {
+    bigImg.classList.add("fade");
     setTimeout(() => {
-      bigImg.src = currentImg.src; // 현재슬라이드의 src를 big에 넣기
-      bigImg.classList.remove('fade');
+      bigImg.style.backgroundImage = `url(${currentImg.src})`;
+      bigImg.classList.remove("fade");
     }, 200);
   }
 }
 
 // 슬라이드 변경될 때마다 big 이미지 업데이트
-s1Swiper.on('slideChange', updateBigImage);
+s1Swiper.on("slideChange", updateBigImage);
 
 // 초기 big 이미지 세팅
 updateBigImage();
