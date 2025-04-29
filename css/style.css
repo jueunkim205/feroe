@@ -348,21 +348,20 @@ header nav.on .btns span {
 }
 
 
-/* ------------------------------ */
+/* ----------- section1 ----------- */
 
-
-.section1 {
+.section1 .wrap {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: -1;
 }
 
 /* 배경깔기 */
 .section1 .container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   display: flex;
@@ -442,7 +441,90 @@ header nav.on .btns span {
   color: #fff;
 }
 
-/* ------------------------------ */
+
+
+/* ----------- section2 ----------- */
+
+.section2 .wrap {
+  width: 100%;
+  height: 100vh;
+}
+
+
+.section2 .tag {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto 20px;
+  gap: 3px;
+}
+
+.section2 .tag li {
+  padding: 3px 5px;
+  border: 1px solid #000;
+  border-radius: 20px;
+}
+
+.section2 .tag li.active {
+  background: #000;
+  color: #fff;
+}
+
+.section2 .swiper {
+  width: 70%;
+  height: 200px;
+}
+
+.section2 .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section2 .swiper-slide span {
+  display: block;
+}
+
+.section2 #arrow {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 20%;
+  box-sizing: border-box;
+}
+
+.section2 .big {
+  position: relative;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+}
+
+.section2 .big img {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+.section2 .big img.fade {
+  opacity: 0;
+}
+
+
+/* ----------- 반응형 ----------- */
+
 @keyframes after {
   0% {
     transform: translateX(0) scaleX(0)
@@ -495,6 +577,7 @@ header nav.on .btns span {
     gap: 3rem;
   }
 }
+
 
 @media screen and (max-width: 1024px) {
   header nav .mainMenu {
