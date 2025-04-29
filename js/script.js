@@ -167,12 +167,13 @@ function updateBigImage() {
   const bigImg = document.querySelector(".big");
   const middleIndex = s2Swiper.activeIndex;
   const middleSlide = s2Swiper.slides[middleIndex];
-  const currentImg = middleSlide ? middleSlide.querySelector("img") : null;
+  const imgbox = middleSlide ? middleSlide.querySelector(".imgbox") : null;
 
-  if (currentImg) {
+  if (imgbox) {
+    const bgImage = getComputedStyle(imgbox).backgroundImage;
     bigImg.classList.add("fade");
     setTimeout(() => {
-      bigImg.style.backgroundImage = `url(${currentImg.src})`;
+      bigImg.style.backgroundImage = bgImage;
       bigImg.classList.remove("fade");
     }, 200);
   }
