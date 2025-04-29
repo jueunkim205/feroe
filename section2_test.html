@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test page</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .tag {
+      width: 500px;
+      display: flex;
+      justify-content: space-around;
+      margin: 50px auto 20px;
+      gap: 3px;
+    }
+
+    .tag li {
+      padding: 3px 5px;
+      border: 1px solid #000;
+      border-radius: 20px;
+    }
+
+    .tag li.active {
+      background: #000;
+      color: #fff;
+    }
+
+    .swiper {
+      width: 70%;
+      height: 200px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide span {
+      display: block;
+    }
+
+    #arrow {
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      top: 20%;
+      box-sizing: border-box;
+    }
+
+    .big {
+      position: relative;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000;
+    }
+
+    .big img {
+      transition: opacity 0.5s;
+      opacity: 1;
+    }
+
+    .big img.fade {
+      opacity: 0;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+  <div class="wrap">
+    <ul class="tag">
+      <li><a href="#">토르스하운</a></li>
+      <li><a href="#">Klaksvik</a></li>
+      <li><a href="#">Vestmanna</a></li>
+      <li><a href="#">Gasadalur</a></li>
+      <li><a href="#">Fossa</a></li>
+    </ul>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <p><img src="" alt=""></p>
+          <span>1</span>
+        </div>
+        <div class="swiper-slide">
+          <p><img src="" alt=""></p>
+          <span>2</span>
+        </div>
+        <div class="swiper-slide">
+          <p><img src="" alt=""></p>
+          <span>3</span>
+        </div>
+        <div class="swiper-slide">
+          <p><img src="" alt=""></p>
+          <span>4</span>
+        </div>
+        <div class="swiper-slide">
+          <p><img src="" alt=""></p>
+          <span>5</span>
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div id="arrow">
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <p class="big"><img src="" alt=""></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // Swiper 세팅
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      centeredSlides: true, // ★ 추가! 항상 가운데로 맞춤
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // 슬라이드 이미지 넣기
+    document.querySelectorAll('.swiper-slide').forEach(function (v, k) {
+      v.querySelector('img').src = `./images/test/img0${(k % 5) + 1}.jpg`;
+    });
+
+    // tag 클릭 시 swiper 이동 + active 처리
+    const tagItems = document.querySelectorAll('.tag li');
+    tagItems.forEach(function (v, k) {
+      v.addEventListener('click', function (e) {
+        e.preventDefault();
+        swiper.slideToLoop(k, 500); // ★ 현재 index로 이동
+      /**
+       * swiper.slideToLoop(index, speed, runCallbacks)
+       * .slideTo와 동일하지만 활성화된 루프와 함께 사용되는 경우입니다.
+       * 따라서 이 메서드는 전달된 인덱스와 일치하는 realIndex가 있는 슬라이드로 이동합니다.
+      **/
+
+        tagItems.forEach(function (item) {
+          item.classList.remove('active');
+        });
+        v.classList.add('active');
+      });
+    });
+
+    // big 이미지 업데이트 함수
+    function updateBigImage() {
+      const bigImg = document.querySelector('.big img');
+      const middleIndex = swiper.activeIndex;
+      const middleSlide = swiper.slides[middleIndex];
+      const currentImg = middleSlide ? middleSlide.querySelector('img') : null;
+
+      if (currentImg) { // currentImg가 null이 아닌 경우
+        bigImg.classList.add('fade');
+        setTimeout(() => {
+          bigImg.src = currentImg.src; // 현재슬라이드의 src를 big에 넣기
+          bigImg.classList.remove('fade');
+        }, 200);
+      }
+    }
+
+    // 슬라이드 변경될 때마다 big 이미지 업데이트
+    swiper.on('slideChange', updateBigImage);
+
+    // 초기 big 이미지 세팅
+    updateBigImage();
+  </script>
+
+</body>
+
+</html>
