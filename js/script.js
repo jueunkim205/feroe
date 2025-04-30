@@ -166,7 +166,7 @@ tagItems.forEach(function (v, k) {
 
 // big 이미지 업데이트 함수
 function updateBigImage() {
-  const bigImg = document.querySelector(".big");
+  const bigImg = document.querySelector(".section2 .big");
   const middleIndex = s2Swiper.activeIndex;
   const middleSlide = s2Swiper.slides[middleIndex];
   const imgbox = middleSlide ? middleSlide.querySelector(".imgbox") : null;
@@ -200,9 +200,28 @@ s2Swiper.on("slideChange", function () {
 /******************** section2 ********************** */
 
 const bg = document.querySelector('.section2 .scroll-bg');
+const section2 = document.querySelector('.section2');
+const section3 = document.querySelector('.section3');
 
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
-  // 스크롤 양에 비례해 배경 y위치 변경 (너무 빠르지 않게 조절)
+  const section2Top = section2.offsetTop;
+  const section2Height = section2.offsetHeight;
+  const section3Top = section3.offsetTop;
+
+  // 스크롤 양에 비례해 배경 y위치 변경 (기존 코드 유지)
   bg.style.backgroundPosition = `center ${100 + scrollY * 0.05}px`;
+
+  // section2가 화면에 보이기 시작하면 배경이 빠르게 뜸
+  if (scrollY >= section2Top - window.innerHeight && scrollY < section2Top + section2Height) {
+    bg.style.opacity = '1';
+  } 
+  // section3가 화면에 보이기 시작하면 배경이 빠르게 사라짐
+  else if (scrollY >= section3Top - window.innerHeight) {
+    bg.style.opacity = '0';
+  } 
+  // section2 밖에 있으면 배경이 사라짐
+  else {
+    bg.style.opacity = '0';
+  }
 });

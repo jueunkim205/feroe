@@ -391,7 +391,7 @@ header nav.on .btns span {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  bottom: 20%;
+  bottom: 17%;
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
@@ -451,13 +451,17 @@ header nav.on .btns span {
 
 /* ----------- section2 ----------- */
 
+.section2 .wrap,
+.section3 .wrap {
+  width: 100%;
+  height: 100vh;
+}
+
 .section2 .wrap {
   position: relative;
   max-width: 1400px;
   display: flex;
   gap: 3rem;
-  width: 100%;
-  height: 100vh;
   margin: 0 auto;
   padding-top: 7rem;
   box-sizing: border-box;
@@ -543,7 +547,7 @@ header nav.on .btns span {
   box-shadow: 0 5px 12px rgba(0, 58, 107, .25);
 }
 
-.swiper-slide div {
+.section2  .swiper-slide div {
   width: 90%;
   background: #fff;
   padding: 1rem 0;
@@ -553,11 +557,12 @@ header nav.on .btns span {
   font-family: Pretendard, sans-serif;
 }
 
-.swiper-slide div p{
+.section2 .swiper-slide div p{
   font-size: 2.3rem;
   font-weight: bold;
 }
-.swiper-slide div span{
+
+.section2 .swiper-slide div span{
   display: block;
   font-size: 1.7rem;
   color: #222;
@@ -609,9 +614,15 @@ header nav.on .btns span {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23a8d8b9' fill-opacity='1' d='M0,288L60,272C120,256,240,224,360,186.7C480,149,600,107,720,96C840,85,960,107,1080,106.7C1200,107,1320,85,1380,74.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
   background-size: cover;
   background-position: center bottom;
-  transition: background-position 0.2s ease-out;
+  opacity: 0;
+  transition: opacity 0.7s linear; /* 부드러운 전환 */
 }
 
+
+/* ----------- section3 ----------- */
+.section3 .wrap {
+  border: 1px solid #000;
+}
 
 /* ----------- 반응형 ----------- */
 
