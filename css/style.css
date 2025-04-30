@@ -32,6 +32,13 @@ a {
   font-family: Pretendard, sans-serif;
 }
 
+.left .text {
+  font-weight: bold;
+  letter-spacing: -1px;
+  word-break: keep-all;
+  font-family: 'GowunBatang-Regular', sans-serif;
+}
+
 header {
   width: 100%;
 }
@@ -173,15 +180,19 @@ header nav .subMenu .left {
 header nav .subMenu .left .text {
   position: absolute;
   right: 10%;
-  top: 7.5rem;
+  top: 6rem;
   text-align: right;
   color: #000;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 500;
 }
 
 header nav .subMenu .left .text h2 {
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+header nav .subMenu .left .text p {
+  font-weight: 00;
 }
 
 header nav .sub4 .right,
@@ -452,10 +463,11 @@ header nav.on .btns span {
 /* ----------- section2 ----------- */
 
 .section2 .wrap,
-.section3 .wrap {
+.section3 .wrap,
+.section4 .con {
   width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 10rem auto 0;
 }
 
 .section2 .wrap {
@@ -463,8 +475,6 @@ header nav.on .btns span {
   display: flex;
   height: 100vh;
   gap: 3rem;
-  padding-top: 7rem;
-  box-sizing: border-box;
 }
 
 .section2 .left {
@@ -473,18 +483,13 @@ header nav.on .btns span {
   padding-top: 3rem;
 }
 
-.left .text {
-  font-weight: bold;
-  letter-spacing: -1px;
-  font-family: 'GowunBatang-Regular', sans-serif;
-}
 
-.left .text p:first-child {
+section .left .text p:first-child {
   font-size: 3rem;
   color: #222;
 }
 
-.left .text p:last-child {
+section .left .text p:last-child {
   font-size: 3.5rem;
 }
 
@@ -502,7 +507,7 @@ header nav.on .btns span {
   color: #111;
   border-radius: 20px;
   cursor: pointer;
-  background: #ffffff80;
+  background: #fff;
 }
 
 .section2 .left .tag li p {
@@ -684,8 +689,8 @@ header nav.on .btns span {
   transform: scale(1.2);
 }
 
-.section3 .con li a > p::before,
-.section3 .con li a > p::after {
+.section3 .con li a>p::before,
+.section3 .con li a>p::after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -693,18 +698,20 @@ header nav.on .btns span {
   height: 10rem;
   transform: translate(-50%, -50%);
   z-index: 1;
-  transition: transform 0.5s ease, opacity 0.5s ease; /* opacity도 transition으로 추가 */
-  opacity: 0; /* 기본 상태에서 숨김 */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  /* opacity도 transition으로 추가 */
+  opacity: 0;
+  /* 기본 상태에서 숨김 */
 }
 
-.section3 .con li a > p::before {
+.section3 .con li a>p::before {
   content: '';
   border: 1px solid #fff;
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(1.8);
 }
 
-.section3 .con li a > p::after {
+.section3 .con li a>p::after {
   content: '+';
   color: #fff;
   font-size: 10rem;
@@ -713,22 +720,18 @@ header nav.on .btns span {
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
-.section3 .con li:hover a > p::before {
+.section3 .con li:hover a>p::before {
   transform: translate(-50%, -50%) scale(1);
-  opacity: 1; /* 호버 시 나타남 */
+  opacity: 1;
+  /* 호버 시 나타남 */
 }
 
-.section3 .con li:hover a > p::after {
+.section3 .con li:hover a>p::after {
   transform: translate(-50%, -50%) rotate(360deg);
   color: #fff;
-  opacity: 1; /* 호버 시 나타남 */
+  opacity: 1;
+  /* 호버 시 나타남 */
 }
-
-
-
-
-
-
 
 .section3 .con li .text {
   display: block;
@@ -743,15 +746,196 @@ header nav.on .btns span {
   margin: 3rem 0 2.5rem;
 }
 
-
 .section3 .con li .text p {
   font-size: 1.7rem;
+}
+
+/* ----------- section4 ----------- */
+
+.wavebox {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+  animation: waveMove 10s linear infinite;
+  will-change: transform;
+}
+
+.wave2 {
+  animation: waveMove2 15s linear infinite;
+  opacity: 0.5;
+  height: 120%;
+}
+
+path {
+  fill: #009ee3;
+  animation: waveScale 6s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes waveMove2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes waveScale {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.05);
+  }
+}
+
+/* 거품 효과 */
+.bubbles {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: bubbleRise 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.8);
+    opacity: 0;
+  }
 }
 
 
 
 
+.section4 .wrap {
+  width: 100%;
+  background: #009ee3;
+}
 
+.section4 .wrap .con {
+  display: flex;
+  max-width: 1400px;
+  margin: -1rem auto 0;
+  padding: 10rem 0;
+}
+
+.section4 .wrap div {
+  height: 45vh;
+}
+
+.section4 .left {
+  width: 45%;
+  height: 100%;
+}
+
+.section4 .left a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section4 .left a>p {
+  width: 100%;
+  height: 100%;
+  border-radius: 0rem 10rem 0 0 ;
+  overflow: hidden;
+}
+
+.section4 .left a p img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  transition: .5s;
+}
+
+.section4 .left:hover a p img {
+  transform: scale(1.3);
+}
+
+.section4 .left a .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-family: Pretendard, sans-serif;
+}
+
+.section4 .left a .text p {
+  color: #fff;
+  text-shadow: 8px 5px 25px rgba(0, 58, 107, .15);
+}
+
+.section4 .left a .text p:first-child {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section4 .left a .text p:nth-child(2) {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.section4 .left a .text p:last-child {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 4rem auto 0;
+  padding: 1rem 3rem;
+  border: 1px solid #fff;
+  border-radius: 5rem;
+  background: linear-gradient(to right, #fff 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: all .35s ease-out;
+}
+
+.section4 .left:hover a .text p:last-child {
+  background-position: left;
+  color: #222;
+}
 
 
 /* ----------- 반응형 ----------- */

@@ -127,28 +127,28 @@
 
     <script>
       const wavebox = document.querySelector('.wavebox');
-    
+
       function createBubble() {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
-    
+
         const size = Math.random() * 20 + 10; // 10px ~ 30px
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
         bubble.style.left = `${Math.random() * 100}%`;
         bubble.style.animationDuration = `${Math.random() * 3 + 7}s`; // 4~7초
-    
+
         wavebox.appendChild(bubble);
-    
+
         setTimeout(() => {
           bubble.remove(); // 메모리 누수 방지
         }, 7000);
       }
-    
+
       // 일정 간격으로 비눗방울 생성
       setInterval(createBubble, 500);
     </script>
-    
+
   </div>
 </body>
 

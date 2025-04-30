@@ -3,22 +3,22 @@ $(function () {
 
   const HeaderimgSources = {
     sub1: [
-      "./images/sub101.png",
-      "./images/sub102.png",
-      "./images/sub103.jpg",
-      "./images/sub_last.png",
+      "./images/sub/sub101.png",
+      "./images/sub/sub102.png",
+      "./images/sub/sub103.jpg",
+      "./images/sub/sub_last.png",
     ],
     sub2: [
-      "./images/sub201.jpg",
-      "./images/sub202.jpg",
-      "./images/sub203.jpg",
-      "./images/sub_last.png",
+      "./images/sub/sub201.jpg",
+      "./images/sub/sub202.jpg",
+      "./images/sub/sub203.jpg",
+      "./images/sub/sub_last.png",
     ],
     sub3: [
-      "./images/sub301.jpg",
-      "./images/sub302.jpg",
-      "./images/sub303.jpg",
-      "./images/sub_last.png",
+      "./images/sub/sub301.jpg",
+      "./images/sub/sub302.jpg",
+      "./images/sub/sub303.jpg",
+      "./images/sub/sub_last.png",
     ],
   };
 
@@ -149,6 +149,8 @@ updateBigImage();
 
 // tag 클릭 시 swiper 이동 + active 처리
 const tagItems = document.querySelectorAll(".tag li");
+
+tagItems[0].classList.add("active");
 tagItems.forEach(function (v, k) {
   v.addEventListener("click", function (e) {
     e.preventDefault();
@@ -237,7 +239,6 @@ let Sec3imgLi = document.querySelectorAll(".section3 .con li");
 Sec3imgLi.forEach(function (v, k) {
   let aTag = v.querySelector("a");
 
-  // p 태그 생성
   let makeP = document.createElement("p");
 
   // img 태그 생성 및 src 설정
@@ -250,3 +251,30 @@ Sec3imgLi.forEach(function (v, k) {
   // a 안에 p 삽입
   aTag.insertBefore(makeP, aTag.firstChild);
 });
+
+
+
+
+/******************** section4 ********************** */
+
+const wavebox = document.querySelector('.wavebox');
+    
+function createBubble() {
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+
+  const size = Math.random() * 20 + 10; // 10px ~ 30px
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubble.style.left = `${Math.random() * 100}%`;
+  bubble.style.animationDuration = `${Math.random() * 3 + 7}s`; // 4~7초
+
+  wavebox.appendChild(bubble);
+
+  setTimeout(() => {
+    bubble.remove(); // 메모리 누수 방지
+  }, 7000);
+}
+
+// 일정 간격으로 비눗방울 생성
+setInterval(createBubble, 500);
