@@ -1,7 +1,7 @@
 $(function () {
   /******************** header ********************** */
 
-  const imgSources = {
+  const HeaderimgSources = {
     sub1: [
       "./images/sub101.png",
       "./images/sub102.png",
@@ -22,7 +22,7 @@ $(function () {
     ],
   };
 
-  $.each(imgSources, function (className, srcArray) {
+  $.each(HeaderimgSources, function (className, srcArray) {
     $("." + className + " li").each(function (index) {
       if (srcArray[index]) {
         $(this).css("background-image", "url(" + srcArray[index] + ")");
@@ -212,25 +212,32 @@ window.addEventListener('scroll', () => {
   // 스크롤 양에 비례해 배경 y위치 변경 (기존 코드 유지)
   bg.style.backgroundPosition = `center ${100 + scrollY * 0.05}px`;
 
-  // section2가 화면에 보이기 시작하면 배경이 빠르게 뜸
+  // section2가 화면에 보이기 시작하면 배경이 나타남
   if (scrollY >= section2Top - window.innerHeight && scrollY < section2Top + section2Height) {
     bg.style.opacity = '1';
+    bg.style.visibility = 'visible';  // 보이게 설정
   } 
-  // section3가 화면에 보이기 시작하면 배경이 빠르게 사라짐
+  // section3가 화면에 보이기 시작하면 배경이 바로 사라짐
   else if (scrollY >= section3Top - window.innerHeight) {
     bg.style.opacity = '0';
+    bg.style.visibility = 'hidden';  // 바로 숨김
   } 
   // section2 밖에 있으면 배경이 사라짐
   else {
     bg.style.opacity = '0';
+    bg.style.visibility = 'hidden';  // 바로 숨김
   }
 });
 
-
 /******************** section3 ********************** */
-/*
-document.querySelectorAll('.section3 .con li').forEach(function(v, k){
-  v.append('img').src = ''
-}) 
 
-*/
+let Sec3imgLi = document.querySelectorAll('.section3 .con li');
+
+// 이미지 개수에 맞게 li 안에 img 태그 삽입
+Sec3imgLi.forEach(function(v, k){
+  let makeImg = document.createElement('img'); 
+  makeImg.src = `./images/sec3/img0${k + 1}.jpg`;
+
+  let aTag = v.querySelector('a');
+  aTag.insertBefore(makeImg, aTag.firstChild); // a 태그의 첫 번째 자식으로 img 태그 추가
+});
