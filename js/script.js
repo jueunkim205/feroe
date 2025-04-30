@@ -137,10 +137,12 @@ var s2Swiper = new Swiper(".mySwiper", {
   },
 });
 
-let sec2SwiperSlide = document.querySelectorAll(".section2 .swiper-slide")
+let sec2SwiperSlide = document.querySelectorAll(".section2 .swiper-slide");
 // 슬라이드 이미지 넣기
 sec2SwiperSlide.forEach(function (v, k) {
-  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sec2/img0${(k % sec2SwiperSlide.length) + 1}.jpg)`;
+  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sec2/img0${
+    (k % sec2SwiperSlide.length) + 1
+  }.jpg)`;
 });
 
 updateBigImage();
@@ -181,7 +183,6 @@ function updateBigImage() {
   }
 }
 
-
 // 초기 big 이미지 세팅
 s2Swiper.on("slideChange", function () {
   updateBigImage();
@@ -194,16 +195,13 @@ s2Swiper.on("slideChange", function () {
   });
 });
 
-
-
-
 /******************** section2 ********************** */
 
-const bg = document.querySelector('.section2 .scroll-bg');
-const section2 = document.querySelector('.section2');
-const section3 = document.querySelector('.section3');
+const bg = document.querySelector(".section2 .scroll-bg");
+const section2 = document.querySelector(".section2");
+const section3 = document.querySelector(".section3");
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
   const section2Top = section2.offsetTop;
   const section2Height = section2.offsetHeight;
@@ -213,31 +211,42 @@ window.addEventListener('scroll', () => {
   bg.style.backgroundPosition = `center ${100 + scrollY * 0.05}px`;
 
   // section2가 화면에 보이기 시작하면 배경이 나타남
-  if (scrollY >= section2Top - window.innerHeight && scrollY < section2Top + section2Height) {
-    bg.style.opacity = '1';
-    bg.style.visibility = 'visible';  // 보이게 설정
-  } 
+  if (
+    scrollY >= section2Top - window.innerHeight &&
+    scrollY < section2Top + section2Height
+  ) {
+    bg.style.opacity = "1";
+    bg.style.visibility = "visible"; // 보이게 설정
+  }
   // section3가 화면에 보이기 시작하면 배경이 바로 사라짐
   else if (scrollY >= section3Top - window.innerHeight) {
-    bg.style.opacity = '0';
-    bg.style.visibility = 'hidden';  // 바로 숨김
-  } 
+    bg.style.opacity = "0";
+    bg.style.visibility = "hidden"; // 바로 숨김
+  }
   // section2 밖에 있으면 배경이 사라짐
   else {
-    bg.style.opacity = '0';
-    bg.style.visibility = 'hidden';  // 바로 숨김
+    bg.style.opacity = "0";
+    bg.style.visibility = "hidden"; // 바로 숨김
   }
 });
 
 /******************** section3 ********************** */
 
-let Sec3imgLi = document.querySelectorAll('.section3 .con li');
+let Sec3imgLi = document.querySelectorAll(".section3 .con li");
 
-// 이미지 개수에 맞게 li 안에 img 태그 삽입
-Sec3imgLi.forEach(function(v, k){
-  let makeImg = document.createElement('img'); 
+Sec3imgLi.forEach(function (v, k) {
+  let aTag = v.querySelector("a");
+
+  // p 태그 생성
+  let makeP = document.createElement("p");
+
+  // img 태그 생성 및 src 설정
+  let makeImg = document.createElement("img");
   makeImg.src = `./images/sec3/img0${k + 1}.jpg`;
 
-  let aTag = v.querySelector('a');
-  aTag.insertBefore(makeImg, aTag.firstChild); // a 태그의 첫 번째 자식으로 img 태그 추가
+  // p 안에 img 삽입
+  makeP.appendChild(makeImg);
+
+  // a 안에 p 삽입
+  aTag.insertBefore(makeP, aTag.firstChild);
 });

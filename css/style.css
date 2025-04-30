@@ -473,7 +473,7 @@ header nav.on .btns span {
   padding-top: 3rem;
 }
 
- .left .text {
+.left .text {
   font-weight: bold;
   letter-spacing: -1px;
   font-family: 'GowunBatang-Regular', sans-serif;
@@ -638,7 +638,7 @@ header nav.on .btns span {
   height: 100vh;
 }
 
-.section3 .left .text{
+.section3 .left .text {
   margin-top: 5rem;
 }
 
@@ -664,14 +664,71 @@ header nav.on .btns span {
   margin-top: 10rem;
 }
 
-.section3 .con li img {
+.section3 .con li a>p {
+  position: relative;
   width: 40rem;
   height: 35rem;
-  object-fit: cover;
-  box-sizing: border-box;
-
+  overflow: hidden;
   border-radius: 5rem 5rem 5rem 0;
 }
+
+.section3 .con li a>p img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s linear;
+}
+
+.section3 .con li:hover a>p img {
+  filter: brightness(40%);
+  transform: scale(1.2);
+}
+
+.section3 .con li a > p::before,
+.section3 .con li a > p::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* opacity도 transition으로 추가 */
+  opacity: 0; /* 기본 상태에서 숨김 */
+}
+
+.section3 .con li a > p::before {
+  content: '';
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1.8);
+}
+
+.section3 .con li a > p::after {
+  content: '+';
+  color: #fff;
+  font-size: 10rem;
+  line-height: 8.5rem;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.section3 .con li:hover a > p::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1; /* 호버 시 나타남 */
+}
+
+.section3 .con li:hover a > p::after {
+  transform: translate(-50%, -50%) rotate(360deg);
+  color: #fff;
+  opacity: 1; /* 호버 시 나타남 */
+}
+
+
+
+
+
+
 
 .section3 .con li .text {
   display: block;
@@ -690,6 +747,7 @@ header nav.on .btns span {
 .section3 .con li .text p {
   font-size: 1.7rem;
 }
+
 
 
 
