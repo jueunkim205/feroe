@@ -140,7 +140,7 @@ var s2Swiper = new Swiper(".mySwiper", {
 let sec2SwiperSlide = document.querySelectorAll(".section2 .swiper-slide")
 // 슬라이드 이미지 넣기
 sec2SwiperSlide.forEach(function (v, k) {
-  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sub2/img0${(k % sec2SwiperSlide.length) + 1}.jpg)`;
+  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sec2/img0${(k % sec2SwiperSlide.length) + 1}.jpg)`;
 });
 
 updateBigImage();
@@ -225,3 +225,12 @@ window.addEventListener('scroll', () => {
     bg.style.opacity = '0';
   }
 });
+
+
+/******************** section3 ********************** */
+/*
+document.querySelectorAll('.section3 .con li').forEach(function(v, k){
+  v.append('img').src = ''
+}) 
+
+*/
