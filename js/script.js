@@ -143,6 +143,8 @@ sec2SwiperSlide.forEach(function (v, k) {
   v.querySelector(".imgbox").style.backgroundImage = `url(./images/sub2/img0${(k % sec2SwiperSlide.length) + 1}.jpg)`;
 });
 
+updateBigImage();
+
 // tag 클릭 시 swiper 이동 + active 처리
 const tagItems = document.querySelectorAll(".tag li");
 tagItems.forEach(function (v, k) {
@@ -190,4 +192,17 @@ s2Swiper.on("slideChange", function () {
   tagItems.forEach(function (item, idx) {
     item.classList.toggle("active", idx === realIndex);
   });
+});
+
+
+
+
+/******************** section2 ********************** */
+
+const bg = document.querySelector('.section2 .scroll-bg');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  // 스크롤 양에 비례해 배경 y위치 변경 (너무 빠르지 않게 조절)
+  bg.style.backgroundPosition = `center ${100 + scrollY * 0.05}px`;
 });
