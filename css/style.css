@@ -632,13 +632,14 @@ section .left .text p:last-child {
 
 /* ----------- section3 ----------- */
 .section3 {
-  background: #fff;
+  background: #FFFFFF;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 7%);
 }
 
 .section3 .wrap {
   position: relative;
   display: flex;
-  padding-top: 15rem;
+  padding-top: 20rem;
 }
 
 .section3 .left {
@@ -989,6 +990,55 @@ path {
   transform: rotateY(360deg);
 }
 
+
+
+
+footer {
+  background: var(--maincolor);
+  width: 100%;
+  height: 80vh;
+  padding-top: 10rem;
+}
+
+footer .wrap {
+  background: url(../images/footer/footer_background_flip_s.png) center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+footer .wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer .sns {
+  text-align: center;
+}
+footer .sns>p{
+  font-size: 2rem;
+}
+footer .sns ul {
+  display: inline-flex;
+  gap: 3rem;
+  margin: 2rem auto;
+}
+
+footer .sns ul li p {
+  width: 5.5rem;
+  height: 5.2rem;
+  overflow: hidden;
+}
+
+
+footer .sns ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  /* border: 1px solid #000; */
+
+}
 
 
 /* ----------- 반응형 ----------- */
