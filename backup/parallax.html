@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Footer Parallax Bottom</title>
+  <style>
+    :root {
+      --maincolor: #222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", "Pretendard", sans-serif;
+      min-height: 300vh; /* 스크롤 테스트용 */
+    }
+
+    footer {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      padding-top: 10rem;
+      background-color: var(--maincolor);
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    footer .wrap {
+      position: relative;
+      height: 100%;
+      z-index: 1;
+      --scroll-offset: 0px;
+    }
+
+    footer .wrap::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background-image: url('../images/footer/footer_background_flip_s.png'); /* 경로는 프로젝트에 맞게 수정 */
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      transform: translateY(calc(var(--scroll-offset) * -1));
+      transition: transform 0.1s linear;
+      z-index: -1;
+    }
+
+    footer .wrap .sns {
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <footer>
+    <div class="wrap">
+      <div class="sns">
+        <p>페로 제도의 sns에서 다양한 여행 정보를 만나보세요.</p>
+        <ul>
+          <li>인스타그램</li>
+          <li>페이스북</li>
+          <li>핀터레스트</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const wrap = document.querySelector("footer .wrap");
+      if (!wrap) return;
+      const offset = window.scrollY;
+      wrap.style.setProperty('--scroll-offset', offset * 0.4 + 'px');
+    });
+  </script>
+
+</body>
+</html>

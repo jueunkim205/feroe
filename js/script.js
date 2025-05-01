@@ -252,16 +252,13 @@ Sec3imgLi.forEach(function (v, k) {
   aTag.insertBefore(makeP, aTag.firstChild);
 });
 
-
-
-
 /******************** section4 ********************** */
 
-const wavebox = document.querySelector('.wavebox');
-    
+const wavebox = document.querySelector(".wavebox");
+
 function createBubble() {
-  const bubble = document.createElement('div');
-  bubble.classList.add('bubble');
+  const bubble = document.createElement("div");
+  bubble.classList.add("bubble");
 
   const size = Math.random() * 20 + 10; // 10px ~ 30px
   bubble.style.width = `${size}px`;
@@ -278,3 +275,5 @@ function createBubble() {
 
 // 일정 간격으로 비눗방울 생성
 setInterval(createBubble, 500);
+
+/******************** footer ********************** */
