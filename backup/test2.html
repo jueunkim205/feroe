@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Footer Parallax 효과</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      min-height: 300vh;
+    }
+
+    footer {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    footer .parallax-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      z-index: -1;
+      transform: translateY(0);
+      transition: transform 0.1s ease-out;
+    }
+
+    footer .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      padding: 5rem;
+      text-align: center;
+    }
+
+    footer .content h2 {
+      font-size: 2.5rem;
+    }
+
+    footer .content p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <section style="height: 200vh; padding: 3rem;">
+      <h1>스크롤을 내려 Footer를 확인해보세요</h1>
+      <p>배경이 따라오는 패럴랙스 효과를 볼 수 있습니다.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="parallax-bg"></div>
+    <div class="content">
+      <h2>Visit Faroe Islands</h2>
+      <p>자연을 따라오는 아름다운 여정</p>
+    </div>
+  </footer>
+
+  <script>
+    const parallax = document.querySelector('.parallax-bg');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const footerOffsetTop = document.querySelector('footer').offsetTop;
+      const windowHeight = window.innerHeight;
+
+      if (scrollY + windowHeight > footerOffsetTop) {
+        const offset = (scrollY + windowHeight - footerOffsetTop);
+        parallax.style.transform = `translateY(-${offset * 0.3}px)`;
+      }
+    });
+  </script>
+
+</body>
+
+</html>

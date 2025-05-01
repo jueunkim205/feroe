@@ -1,0 +1,1183 @@
+@charset "utf-8";
+
+/* font */
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* rem의 기준 */
+  font-size: 10px;
+  --maincolor: #009ee3;
+  /* Faroese Blue */
+  --primary1: #0065BD;
+  /* Faroese Blue */
+  --primary2: #014751;
+  /* Faroese Blue */
+  --secondary: #6B8E23;
+  /* Velvety Green */
+  --secondary2: #5C7259;
+  /* Velvety Green */
+  /* --secondary2: #5C7259; Velvety Green */
+}
+
+
+.wrap {
+  box-sizing: border-box;
+}
+
+/* 공통 */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: Pretendard, sans-serif;
+}
+
+.left .text {
+  font-weight: bold;
+  letter-spacing: -1px;
+  word-break: keep-all;
+  font-family: 'GowunBatang-Regular', sans-serif;
+}
+
+header {
+  width: 100%;
+}
+
+header nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4rem;
+  height: 10rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-image: linear-gradient(rgba(64, 64, 64, 0.90), transparent);
+  transition: .5s;
+}
+
+header nav .logo,
+footer .left .footerlogo {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  color: #000;
+}
+
+header nav .logo h1,
+footer .left .footerlogo h1 {
+  font-family: "Inter", sans-serif;
+  margin-left: 1.5rem;
+  font-size: 3rem;
+  letter-spacing: -.2rem;
+  font-weight: 400;
+  line-height: .9;
+  color: #fff;
+  transition: .5s;
+}
+
+header nav .logo img,
+footer .left .footerlogo img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+header nav .mainMenu {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+header nav .mainMenu li {
+  text-align: center;
+}
+
+header nav .mainMenu>li a {
+  position: relative;
+  display: block;
+  padding: 3px 15px;
+  font-size: 2.3rem;
+  font-family: Pretendard, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  transition: .3s;
+}
+
+header nav .mainMenu li.on>a:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -50%;
+  transform: translateX(50%);
+  width: 100%;
+  height: 100%;
+  background: var(--maincolor);
+  opacity: .3;
+  z-index: 0;
+  animation: after .5s;
+}
+
+header nav .subMenu {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 350px;
+  left: 0;
+  top: 100%;
+  font-family: Pretendard, sans-serif;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.12);
+  z-index: -2;
+}
+
+header nav .sub5 {
+  height: 600px;
+}
+
+header nav .subMenu.on {
+  transition: .3s linear;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* 배경깔기 */
+header nav .subMenu>li {
+  width: 25%;
+  background-size: cover;
+  background-position: center;
+}
+
+header nav .sub4,
+header nav .sub5 {
+  display: flex;
+  background: #ffffff;
+  box-sizing: border-box;
+
+}
+
+header nav .sub4 .left {
+  width: 25%;
+}
+
+header nav .sub5 .left {
+  width: 30%;
+}
+
+header nav .subMenu .left {
+  position: relative;
+  background: url(../images/bgimage.jpg) center/cover no-repeat;
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url(../images/bgimage.jpg) center/cover no-repeat; */
+}
+
+header nav .subMenu .left .text {
+  position: absolute;
+  right: 10%;
+  top: 6rem;
+  text-align: right;
+  color: #000;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+header nav .subMenu .left .text h2 {
+  font-size: 2.5rem;
+}
+
+header nav .sub4 .right,
+header nav .sub5 .right {
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex: 1;
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+header nav .sub5 .right {
+  padding-right: 20rem;
+}
+
+header nav .sub5 .right {
+  flex-wrap: wrap;
+}
+
+header nav .sub4 .right>li,
+header nav .sub5 .right>li {
+
+  transition: background .5s;
+  box-sizing: border-box;
+}
+
+header nav .sub4 .right>li {
+  flex: 1;
+  padding: 3%;
+}
+
+header nav .sub5 .right>li {
+  width: calc(100% / 3);
+  padding: 3% 3% 2%;
+}
+
+header nav .sub4 .right h2 a,
+header nav .sub5 .right h2 a {
+  font-size: 2.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -1px;
+  word-break: keep-all;
+  border: 1px solid var(--secondary2);
+  border-radius: 5rem;
+  background: linear-gradient(to right, var(--secondary2) 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: all .35s ease-out;
+  box-sizing: border-box;
+  font-family: Pretendard, sans-serif;
+}
+
+header nav .sub4 .right li:hover h2 a,
+header nav .sub5 .right li:hover h2 a {
+  background-position: left;
+  color: #fff;
+}
+
+header nav .sub4 .right li>a,
+header nav .sub5 .right li>a {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: 1.5rem;
+  padding: .5rem 0 .5rem 2rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: .3s;
+  overflow: hidden;
+}
+
+header nav .sub4 .right li>a:hover,
+header nav .sub5 .right li>a:hover {
+  color: var(--secondary2);
+  border: 1px solid var(--secondary2);
+}
+
+header nav .sub4 .right li>a::after,
+header nav .sub5 .right li>a::after {
+  position: absolute;
+  content: '\f061';
+  color: var(--secondary2);
+  font-size: 1.5rem;
+  font-weight: 900;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 6 Free";
+}
+
+header nav .sub4 .right li>a:hover::after,
+header nav .sub5 .right li>a:hover::after {
+  right: 2rem;
+  transition: .3s;
+}
+
+header nav .subMenu>li:not(:last-child) {
+  border-right: .3px solid #ccc;
+}
+
+header nav .subMenu li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+header nav .subMenu li a div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 4rem;
+  text-align: center;
+  box-sizing: border-box;
+  transition: padding-top .3s;
+  background: #00000040;
+}
+
+header nav .subMenu li:hover a div {
+  padding-top: 0;
+  background: #00000083;
+}
+
+header nav .subMenu li a div img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+header nav .subMenu li a div span {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+header nav .btns {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+header nav .btns span {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+/* hover 할때마다 클래스추가 */
+header nav.on {
+  background: #fff;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.12);
+}
+
+header nav.on .logo img {
+  filter: none;
+}
+
+header nav.on .logo h1,
+header nav.on .mainMenu>li a,
+header nav.on .btns span {
+  color: #000;
+}
+
+/* 배경깔기 */
+.main_bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: -10rem;
+  left: 0;
+  z-index: -10;
+}
+
+.main_bg .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main_bg .movable {
+  width: 100%;
+  height: 100%;
+  min-width: 120vw;
+  min-height: 120vh;
+  object-fit: cover;
+  transition: transform 0.05s ease-out;
+  will-change: transform;
+}
+
+/* ----------- section1 ----------- */
+
+.section1 ul {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  bottom: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  border-top: 3px solid #fff;
+}
+
+.section1 ul li a {
+  position: relative;
+  color: #fff;
+  display: flex;
+  font-size: 2.5rem;
+  padding: 8rem 12rem;
+}
+
+.section1 ul li a p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section1 ul li a p:first-child {
+  background: #fff;
+  width: 12rem;
+  height: 12rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transition: .3s;
+  top: -50%;
+}
+
+.section1 ul li:hover a p:first-child {
+  top: 50%;
+  z-index: 1;
+}
+
+.section1 ul li p img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  filter: brightness(1) invert(1);
+}
+
+.section1 #playPauseBtn {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  bottom: 3%;
+  right: 2.5%;
+  font-size: 5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* ----------- section2 ----------- */
+
+.section2 .wrap,
+.section3 .wrap,
+.section4 .con {
+  width: 100%;
+  max-width: 1400px;
+  margin: 10rem auto 0;
+}
+
+.section2 .wrap {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  gap: 3rem;
+}
+
+.section2 .left {
+  position: relative;
+  flex: 1;
+  padding-top: 3rem;
+}
+
+
+section .left .text p:first-child {
+  font-size: 3rem;
+  color: #222;
+}
+
+section .left .text p:last-child {
+  font-size: 3.5rem;
+}
+
+.section2 .left .tag {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 6rem 0 0 2rem;
+}
+
+.section2 .left .tag li {
+  border: 1px solid #333;
+  color: #111;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.section2 .left .tag li p {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  padding: 1rem 2rem;
+  font-family: 'SUITE', sans-serif;
+}
+
+.section2 .left .tag li.active {
+  background: #333;
+  color: #fff;
+}
+
+.section2 .swiper {
+  position: absolute;
+  width: 90%;
+  left: 1.5rem;
+  bottom: 5%;
+  height: 400px;
+}
+
+.section2 .swiper-slide {
+  display: flex;
+  font-size: 18px;
+  width: 100%;
+  height: 35rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.section2 .swiper-slide .imgbox {
+  display: block;
+  width: 90%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 5px 12px rgba(0, 58, 107, .25);
+}
+
+.section2 .swiper-slide div {
+  width: 90%;
+  background: #fff;
+  padding: 1rem 0;
+  border-radius: 10rem;
+  margin-top: 2rem;
+  box-shadow: 0 5px 12px rgba(0, 58, 107, .25);
+  font-family: Pretendard, sans-serif;
+}
+
+.section2 .swiper-slide div p {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+.section2 .swiper-slide div span {
+  display: block;
+  font-size: 1.7rem;
+  color: #222;
+  margin-top: .5rem;
+}
+
+.section2 #control {
+  position: absolute;
+  bottom: 48%;
+  right: 61px;
+  width: 20%;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.section2 #control .swiper-button-next:after,
+.section2 #control .swiper-button-prev:after {
+  background: #fff;
+  padding: 1.2rem 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--secondary2);
+  border-radius: 50%;
+  border: 1px solid var(--secondary2);
+}
+
+.section2 .big {
+  width: 60%;
+  height: 700px;
+  margin-top: 6rem;
+  transition: opacity 0.5s;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.section2 .big.fade {
+  opacity: 0;
+}
+
+.section2 .scroll-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -100;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%236B8E23' fill-opacity='.5' d='M0,288L60,272C120,256,240,224,360,186.7C480,149,600,107,720,96C840,85,960,107,1080,106.7C1200,107,1320,85,1380,74.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0;
+  transition: opacity 0.7s linear;
+  /* 부드러운 전환 */
+}
+
+
+/* ----------- section3 ----------- */
+.section3 {
+  background: #FFFFFF;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 7%);
+}
+
+.section3 .wrap {
+  position: relative;
+  display: flex;
+  padding-top: 20rem;
+}
+
+.section3 .left {
+  position: sticky;
+  top: 0;
+  width: 30%;
+  height: 100vh;
+}
+
+.section3 .left .text {
+  margin-top: 13rem;
+}
+
+.section3 .con {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10rem;
+  flex: 1;
+}
+
+.section3 .con li {
+  display: flex;
+  text-align: center;
+  width: calc((100% - 10rem) / 2);
+  box-sizing: border-box;
+}
+
+.section3 .con li:nth-child(odd) {
+  margin-bottom: 10rem;
+}
+
+.section3 .con li:nth-child(even) {
+  margin-top: 10rem;
+}
+
+.section3 .con li a>p {
+  position: relative;
+  width: 40rem;
+  height: 35rem;
+  overflow: hidden;
+  border-radius: 5rem 5rem 5rem 0;
+}
+
+.section3 .con li a>p img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s linear;
+}
+
+.section3 .con li:hover a>p img {
+  filter: brightness(40%);
+  transform: scale(1.2);
+}
+
+.section3 .con li a>p::before,
+.section3 .con li a>p::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  /* 기본 상태에서 숨김 */
+}
+
+.section3 .con li a>p::before {
+  content: '';
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1.8);
+}
+
+.section3 .con li a>p::after {
+  content: '+';
+  color: #fff;
+  font-size: 10rem;
+  line-height: 8.5rem;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.section3 .con li:hover a>p::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  /* 호버 시 나타남 */
+}
+
+.section3 .con li:hover a>p::after {
+  transform: translate(-50%, -50%) rotate(360deg);
+  color: #fff;
+  opacity: 1;
+  /* 호버 시 나타남 */
+}
+
+.section3 .con li .text {
+  display: block;
+  text-align: left;
+  padding-left: 2rem;
+  word-break: keep-all;
+  color: #222;
+}
+
+.section3 .con li .text h3 {
+  font-size: 3rem;
+  margin: 3rem 0 2.5rem;
+}
+
+.section3 .con li .text p {
+  font-size: 1.7rem;
+}
+
+/* ----------- section4 ----------- */
+
+.wavebox {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+  animation: waveMove 10s linear infinite;
+  will-change: transform;
+}
+
+.wave2 {
+  animation: waveMove2 15s linear infinite;
+  opacity: 0.5;
+  height: 120%;
+}
+
+path {
+  fill: var(--maincolor);
+  animation: waveScale 6s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes waveMove2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes waveScale {
+
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.05);
+  }
+}
+
+/* 거품 효과 */
+.bubbles {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: bubbleRise 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.section4 .wrap {
+  width: 100%;
+  padding: 10rem 0 50rem;
+}
+
+.section4 .wrap .con {
+  display: flex;
+  max-width: 1400px;
+  margin: -1rem auto 0;
+}
+
+.section4 .wrap div {
+  height: 40vh;
+}
+
+.section4 .left {
+  width: 50%;
+  height: 100%;
+  border-radius: 0rem 10rem 0 0;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section4 .left a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section4 .left a p img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  transition: .5s;
+}
+
+.section4 .left:hover a p img {
+  transform: scale(1.3);
+}
+
+.section4 .left a .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-family: Pretendard, sans-serif;
+}
+
+.section4 .left a .text p {
+  color: #fff;
+  text-shadow: 8px 5px 25px rgba(0, 58, 107, .15);
+}
+
+.section4 .left a .text p:first-child {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section4 .left a .text p:nth-child(2) {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.section4 .left .text .go {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 4rem auto 0;
+  padding: 1rem 3rem;
+  border: 1px solid #fff;
+  border-radius: 5rem;
+  background: linear-gradient(to right, #fff 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: all .35s ease-out;
+}
+
+.section4 .left:hover .text .go {
+  background-position: left;
+  color: #222;
+}
+
+.section4 .right {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  gap: 5rem 2%;
+}
+
+.section4 .right li {
+  width: calc((100% - 4%) / 3);
+  box-sizing: border-box;
+}
+
+.section4 .right li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.section4 .right li h2 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.section4 .right li a p {
+  width: 12rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section4 .right li a p img {
+  width: 100%;
+  transition: 1s;
+}
+
+.section4 .right li:hover a p img {
+  transform: rotateY(360deg);
+}
+
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  /* top: -10vh; */
+  box-sizing: border-box;
+  background: var(--maincolor);
+  z-index: -1;
+}
+
+footer .wrap {
+  position: relative;
+  /* background: url(../images/footer/footer_background_flip_s.png) center/cover no-repeat; */
+  top: -10rem;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", "Pretendard", sans-serif;
+  overflow: hidden;
+  z-index: 1;
+}
+
+footer .parallax-bg {
+  position: absolute;
+  bottom: -20vh;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-image: url('../images/footer/orig.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: 0;
+  transform: translateY(0);
+  /* transition: transform 0.1s ease-out; */
+}
+
+footer .wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer .up .sns {
+  text-align: center;
+}
+
+footer .up .sns>p {
+  font-size: 2rem;
+  color: #fff;
+}
+
+footer .up .sns ul {
+  display: inline-flex;
+  gap: 3rem;
+  margin: 3rem auto;
+}
+
+footer .up .sns ul li p {
+  width: 5.5rem;
+  height: 5.2rem;
+  overflow: hidden;
+}
+
+footer .up .sns ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+footer .down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 4rem 0;
+}
+
+footer .down .left,
+footer .down .right {
+  display: flex;
+}
+
+footer .down .left {
+  gap: 5rem;
+  align-items: end;
+}
+
+footer .down .left ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer .down .left ul li {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+footer .down .left ul li span {
+  display: block;
+  width: 6rem;
+}
+
+footer .down .right {
+  gap: 5rem;
+}
+
+footer .down .right li:not(:last-child) {
+  position: relative;
+}
+
+footer .down .right li:not(:last-child):after {
+  position: absolute;
+  content: '';
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 80%;
+  background: #ffffff80;
+}
+
+footer .down .right li a {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0 .5rem .5rem .5rem;
+  transition: border-bottom .3s;
+  border-bottom: .5px solid transparent;
+}
+
+footer .down .right li:hover a {
+  border-bottom: .5px solid #ffffff80;
+}
+
+/* ----------- 반응형 ----------- */
+
+@keyframes after {
+  0% {
+    transform: translateX(0) scaleX(0)
+  }
+
+  100% {
+    transform: translateX(50%) scaleX(1)
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    /* rem의 기준 */
+    font-size: 8px;
+  }
+
+  header nav {
+    padding: 0 15px;
+  }
+
+  header nav .mainMenu {
+    justify-content: flex-end;
+  }
+
+  header nav .sub4,
+  header nav .sub5 {
+    padding: 0;
+  }
+
+
+  header nav .sub4 li>ul li a span,
+  header nav .sub5 li>ul li a span {
+    display: none;
+  }
+
+  header nav .sub4 li>ul li a,
+  header nav .sub5 li>ul li a {
+    padding: 1rem 2rem;
+  }
+
+
+  header nav .btns {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header nav .mainMenu {
+    display: none;
+  }
+}

@@ -140,9 +140,8 @@ var s2Swiper = new Swiper(".mySwiper", {
 let sec2SwiperSlide = document.querySelectorAll(".section2 .swiper-slide");
 // 슬라이드 이미지 넣기
 sec2SwiperSlide.forEach(function (v, k) {
-  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sec2/img0${
-    (k % sec2SwiperSlide.length) + 1
-  }.jpg)`;
+  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sec2/img0${(k % sec2SwiperSlide.length) + 1
+    }.jpg)`;
 });
 
 updateBigImage();
@@ -276,4 +275,19 @@ function createBubble() {
 // 일정 간격으로 비눗방울 생성
 setInterval(createBubble, 500);
 
+
+
 /******************** footer ********************** */
+
+// const parallax = document.querySelector('.parallax-bg');
+
+// window.addEventListener('scroll', () => {
+//   const scrollY = window.scrollY;
+//   const footerOffsetTop = document.querySelector('footer').offsetTop;
+//   const windowHeight = window.innerHeight;
+
+//   if (scrollY + windowHeight > footerOffsetTop) {
+//     const offset = (scrollY + windowHeight - footerOffsetTop);
+//     parallax.style.transform = `translateY(-${offset * 0.5}px)`;
+//   }
+// });

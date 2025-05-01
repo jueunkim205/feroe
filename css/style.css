@@ -991,20 +991,20 @@ path {
 }
 
 
-
+/* ----------- footer ----------- */
 
 footer {
   background: var(--maincolor);
   width: 100%;
-  height: 80vh;
-  padding-top: 10rem;
+  height: 50vh;
 }
 
 footer .wrap {
-  background: url(../images/footer/footer_background_flip_s.png) center/cover no-repeat;
+  background: url(../images/footer/footer_background_flip_s.png) center top/cover no-repeat;
   width: 100%;
   height: 100%;
   font-family: "Inter", "Pretendard", sans-serif;
+  padding-top: 5rem;
 }
 
 footer .wrap img {
@@ -1103,7 +1103,7 @@ footer .down .right li a {
   border-bottom: .5px solid transparent;
 }
 
-footer .down .right li:hover a{
+footer .down .right li:hover a {
   border-bottom: .5px solid #ffffff80;
 }
 
