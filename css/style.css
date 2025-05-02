@@ -78,6 +78,7 @@ header nav {
   box-sizing: border-box;
   background-image: linear-gradient(rgba(64, 64, 64, 0.90), transparent);
   transition: .5s;
+  z-index: 10;
 }
 
 header nav .logo,
@@ -145,7 +146,6 @@ header nav .mainMenu li.on>a:after {
   height: 100%;
   background: var(--maincolor);
   opacity: .3;
-  z-index: 0;
   animation: after .5s;
 }
 
@@ -159,7 +159,7 @@ header nav .subMenu {
   top: 100%;
   font-family: Pretendard, sans-serif;
   box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.12);
-  z-index: -2;
+  pointer-events: none;
 }
 
 header nav .sub5 {
@@ -169,7 +169,7 @@ header nav .sub5 {
 header nav .subMenu.on {
   transition: .3s linear;
   opacity: 1;
-  z-index: 1;
+  pointer-events: auto;
 }
 
 /* 배경깔기 */
@@ -710,7 +710,7 @@ section .left .text p:last-child {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: -100;
+  z-index: -10;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%236B8E23' fill-opacity='.5' d='M0,288L60,272C120,256,240,224,360,186.7C480,149,600,107,720,96C840,85,960,107,1080,106.7C1200,107,1320,85,1380,74.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
   background-size: cover;
   background-position: center bottom;
