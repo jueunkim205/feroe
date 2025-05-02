@@ -63,6 +63,8 @@ $(function () {
     noneSubMenu();
     this.classList.remove("on");
   });
+
+  
 });
 
 /******************** section1 ********************** */
@@ -279,6 +281,5 @@ setInterval(createBubble, 500);
 /******************** 기타 ********************** */
 
 // aos
-AOS.init({
-  once: false 
-});
+AOS.init();
+
