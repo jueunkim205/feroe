@@ -1005,7 +1005,7 @@ path {
 footer {
   position: relative;
   width: 100%;
-  height: 35vh;
+
   box-sizing: border-box;
   background: var(--maincolor);
 }
@@ -1024,37 +1024,36 @@ footer .wrap img {
   object-fit: cover;
 }
 
-footer .up .sns {
+footer .up {
   text-align: center;
-  padding-top: 3rem;
+  padding: 5rem 0 2rem;
   border: 1px solid #ffffff5e;
 }
 
-footer .up .sns>p {
+footer .up>p {
   font-size: 2rem;
   letter-spacing: -1px;
   color: #fff;
 }
 
-footer .up .sns ul {
+footer .up ul {
   display: inline-flex;
   gap: 3rem;
   margin: 3rem auto;
 }
 
-footer .up .sns ul li p {
+footer .up ul li p {
   width: 5.5rem;
   height: 5.2rem;
   overflow: hidden;
 }
 
-footer .up .sns ul li:last-child p{
-  /* border: 1px solid #000; */
+footer .up ul li:last-child p{
   width: 5rem;
   height: 5rem;
 }
 
-footer .up .sns ul li img {
+footer .up ul li img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1064,7 +1063,7 @@ footer .down {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 4rem 0;
+  padding: 5rem 4rem;
 }
 
 footer .down .left,
