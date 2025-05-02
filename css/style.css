@@ -534,7 +534,7 @@ section .left .text p:last-child {
   position: absolute;
   width: 90%;
   left: 1.5rem;
-  bottom: 5%;
+  bottom: 7.5%;
   height: 400px;
 }
 
@@ -550,24 +550,35 @@ section .left .text p:last-child {
   box-sizing: border-box;
 }
 
-.section2 .swiper-slide .imgbox {
+.section2 .swiper-slide a{
   display: block;
-  width: 90%;
+  width: 100%;
   height: 100%;
+  box-sizing: border-box;
+}
+
+.section2 .swiper-slide a .imgbox {
+  display: block;
+  width: 100%;
+  height: 80%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0 5px 12px rgba(0, 58, 107, .25);
 }
 
-.section2 .swiper-slide div {
-  width: 90%;
+.section2 .swiper-slide a div {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #fff;
-  padding: 1rem 0;
   border-radius: 10rem;
   margin-top: 2rem;
   box-shadow: 0 5px 12px rgba(0, 58, 107, .25);
   font-family: Pretendard, sans-serif;
+  color: #222;
 }
 
 .section2 .swiper-slide div p {
@@ -578,14 +589,13 @@ section .left .text p:last-child {
 .section2 .swiper-slide div span {
   display: block;
   font-size: 1.7rem;
-  color: #222;
   margin-top: .5rem;
 }
 
 .section2 #control {
   position: absolute;
-  bottom: 48%;
-  right: 61px;
+  bottom: 50%;
+  right: 45px;
   width: 20%;
   height: 50px;
   box-sizing: border-box;
@@ -997,7 +1007,7 @@ path {
 footer {
   position: relative;
   width: 100%;
-  height: 40vh;
+  height: 35vh;
   box-sizing: border-box;
   background: var(--maincolor);
 }

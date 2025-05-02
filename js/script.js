@@ -1,4 +1,8 @@
 $(function () {
+
+  AOS.init();
+
+
   /******************** header ********************** */
 
   const HeaderimgSources = {
