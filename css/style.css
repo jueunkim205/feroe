@@ -8,6 +8,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'KimjungchulScript-Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulScript-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -411,20 +418,20 @@ header nav.on .btns span {
 .main_bg #mainText {
   position: absolute;
   z-index: 100;
-  top: 50%;
+  top: 40%;
   left: 50%;
   color: #fff;
-  font-family: 'GowunBatang-Regular', sans-serif;
+  font-family: 'KimjungchulScript-Bold', sans-serif;
   letter-spacing: -1px;
   text-shadow: 1rem 1rem 5rem rgba(68, 68, 68, 0.8);
 }
 
 .main_bg #textType{
-  font-size: 2.5rem;
+  font-size: 3rem;
 
 }
 .main_bg #textType2{
-  font-size: 5rem;
+  font-size: 6rem;
 
 }
 

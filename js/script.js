@@ -112,7 +112,7 @@ window.onload = function () {
           const typewriter2 = new Typewriter(text1, { loop: false });
 
           typewriter2
-            .typeString("페로 제도에 오신 것을 환영합니다.")
+            .typeString("페로 제도에 어서오세요.")
             .callFunction(() => {
               // 타이핑 종료 후 5초 뒤 커서 서서히 사라지기
               setTimeout(() => {
