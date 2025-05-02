@@ -856,6 +856,7 @@ path {
 
 .section4 .wrap {
   width: 100%;
+  padding: 10rem 0;
   background: var(--maincolor);
 }
 
@@ -863,12 +864,8 @@ path {
   display: flex;
   max-width: 1400px;
   margin: -1rem auto 0;
-  padding: 10rem 0;
 }
 
-.section4 .wrap div {
-  height: 40vh;
-}
 
 .section4 .left {
   width: 50%;
@@ -884,6 +881,12 @@ path {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.section4 .left a>p {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
 }
 
 .section4 .left a p img {
@@ -991,20 +994,20 @@ path {
 }
 
 
-/* ----------- footer ----------- */
-
 footer {
-  background: var(--maincolor);
+  position: relative;
   width: 100%;
-  height: 50vh;
+  height: 40vh;
+  box-sizing: border-box;
+  background: var(--maincolor);
 }
 
 footer .wrap {
-  background: url(../images/footer/footer_background_flip_s.png) center top/cover no-repeat;
   width: 100%;
   height: 100%;
   font-family: "Inter", "Pretendard", sans-serif;
-  padding-top: 5rem;
+  overflow: hidden;
+  z-index: 1;
 }
 
 footer .wrap img {
@@ -1015,10 +1018,13 @@ footer .wrap img {
 
 footer .up .sns {
   text-align: center;
+  padding-top: 3rem;
+  border: 1px solid #ffffff5e;
 }
 
 footer .up .sns>p {
   font-size: 2rem;
+  letter-spacing: -1px;
   color: #fff;
 }
 
@@ -1032,6 +1038,12 @@ footer .up .sns ul li p {
   width: 5.5rem;
   height: 5.2rem;
   overflow: hidden;
+}
+
+footer .up .sns ul li:last-child p{
+  /* border: 1px solid #000; */
+  width: 5rem;
+  height: 5rem;
 }
 
 footer .up .sns ul li img {
