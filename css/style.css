@@ -13,7 +13,7 @@
   padding: 0;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -52,6 +52,7 @@ a {
   letter-spacing: -1px;
   word-break: keep-all;
   font-family: 'GowunBatang-Regular', sans-serif;
+  text-shadow: 1rem 1rem 5rem rgba(10, 59, 107, 0.5);
 }
 
 header {
@@ -406,14 +407,50 @@ header nav.on .btns span {
   will-change: transform;
 }
 
+/* 메인 타이핑 텍스트 */
+.main_bg #mainText {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-family: 'GowunBatang-Regular', sans-serif;
+  letter-spacing: -1px;
+  text-shadow: 1rem 1rem 5rem rgba(68, 68, 68, 0.8);
+}
+
+.main_bg #textType{
+  font-size: 2.5rem;
+
+}
+.main_bg #textType2{
+  font-size: 5rem;
+
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
 /* ----------- section1 ----------- */
+
 
 .section1 ul {
   position: absolute;
   display: flex;
   justify-content: space-between;
   width: 80%;
-  bottom: 17%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
@@ -468,6 +505,36 @@ header nav.on .btns span {
   font-size: 5rem;
   color: #fff;
   cursor: pointer;
+}
+
+#topbtn {
+  position: fixed;
+  text-align: center;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 0.5px solid #ccc;
+  background: #ffffffa5;
+  cursor: pointer;
+  z-index: 50;
+
+  /* 추가된 부분 */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100px);
+  transition: all 0.5s ease;
+}
+
+#topbtn span {
+  display: block;
+  margin-top: 6px;
+  font-size: 2.3rem;
+}
+
+#topbtn p {
+  font-size: 1.2rem;
 }
 
 
@@ -552,7 +619,7 @@ section .left .text p:last-child {
   box-sizing: border-box;
 }
 
-.section2 .swiper-slide a{
+.section2 .swiper-slide a {
   display: block;
   width: 100%;
   height: 100%;
@@ -1038,6 +1105,7 @@ footer .up>p {
   font-size: 2rem;
   letter-spacing: -1px;
   color: #fff;
+  text-shadow: 1rem 1rem 1rem rgba(10, 59, 107, 0.3);
 }
 
 footer .up ul {
@@ -1052,7 +1120,7 @@ footer .up ul li p {
   overflow: hidden;
 }
 
-footer .up ul li:last-child p{
+footer .up ul li:last-child p {
   width: 5rem;
   height: 5rem;
 }

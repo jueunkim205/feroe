@@ -36,11 +36,6 @@
 
 
 <body>
-  <!-- 리디자인 -->
-  <!-- 수정 -->
-  <!-- 추가할 것!
-   top버튼 -->
-
   <!-- https://daejeontour.co.kr/ko/index.do -->
   <!-- https://knto.or.kr/index -->
   <!-- https://www.oc.go.kr/tour/contents.do?key=3829& -->
@@ -48,7 +43,6 @@
 
 
   <!-- https://visitfaroeislands.com/en -->
-
 
   <div class="wrap">
     <header>
@@ -63,7 +57,6 @@
           <li><a href="https://visitfaroeislands.com/en/whatson/events">축제&행사</a></li>
           <li><a href="#">페로이야기</a></li>
           <li><a href="#">여행도우미</a></li>
-          <!-- hover효과 넣기 -->
         </ul>
 
         <ul class="subMenu sub1">
@@ -286,8 +279,14 @@
       </nav>
     </header>
 
-    <main id="fullpage">
+    <main>
       <div class="main_bg">
+        <!-- 메인 타이핑 텍스트 -->
+        <div id="mainText">
+          <h1 id="textType">뭐지</h1>
+          <h1 id="textType2"></h1>
+        </div>
+
         <div class="container" id="hover-area">
           <video class="movable" id="movable-item" autoplay muted loop playsinline>
             <source src="./images/vfi-1920x1080_low.mp4" type="video/mp4" />
@@ -295,7 +294,7 @@
         </div>
       </div>
 
-      <section class="section1 section" id="section0">
+      <section class="section1">
         <div class="wrap">
           <!-- 문구 예시
           "Where the Sea Meets the Sky – Welcome to the Faroe Islands"
@@ -308,7 +307,7 @@
           <span class="material-symbols-outlined" id="playPauseBtn">
             pause
           </span>
-
+          
           <ul>
             <li>
               <a href="https://visitfaroeislands.com/en/plan-your-stay/staying-here">
@@ -348,10 +347,16 @@
             </li>
           </ul>
 
+          <div id="topbtn">
+            <span class="material-symbols-outlined">
+              keyboard_arrow_up
+            </span>
+            <p>TOP</p>
+          </div>
         </div>
       </section>
 
-      <section class="section2 section" id="section1">
+      <section class="section2">
         <div class="wrap">
           <div class="left">
             <div class="text" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay="100">
@@ -468,7 +473,7 @@
         </div>
       </section>
 
-      <section class="section3 section" id="section2">
+      <section class="section3">
         <div class="wrap">
           <div class="left">
             <div class="text" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay="-100">
@@ -529,9 +534,7 @@
         </div>
       </section>
 
-      <section class="section4 section">
-        <!-- 영상으로 보는 페로제도
-        아름다운 페로제도의 모습을 영상으로 먼저 만나보세요. -->
+      <section class="section4">
         <div class="wavebox">
           <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
             <path d="M0,40 C150,10 350,70 600,40 C850,10 1050,70 1200,40 V100 H0 Z"></path>
@@ -686,6 +689,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/core.js"></script>
   <script src="./js/script.js"></script>
 
 </body>

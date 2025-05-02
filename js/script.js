@@ -65,6 +65,74 @@ $(function () {
   });
 });
 
+
+/******************** top버튼 ********************** */
+let topBtn = document.getElementById("topbtn");
+
+topBtn.onclick = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+window.addEventListener("scroll", () => {
+  let scY = window.scrollY;
+
+  if (scY <= 50) {
+    topBtn.style.opacity = "0";
+    topBtn.style.pointerEvents = "none";
+    topBtn.style.transform = "translateX(100px)";
+  } else {
+    topBtn.style.opacity = "1";
+    topBtn.style.pointerEvents = "auto";
+    topBtn.style.transform = "translateX(0)";
+  }
+});
+
+
+/******************** 타이핑효과 ********************** */
+window.onload = function () {
+  const text0 = document.getElementById("textType"); // 첫 줄
+  const text1 = document.getElementById("textType2"); // 둘째 줄
+
+  // 첫 단계: 초기 typewriter (즉시 종료용)
+  const typewriter0 = new Typewriter(text0, { loop: false });
+
+  typewriter0
+    .callFunction(() => {
+      // 첫 줄 입력
+      const typewriter1 = new Typewriter(text0, {
+        loop: false,
+        cursor: "", // 커서 숨김
+      });
+
+      typewriter1
+        .typeString("바다와 하늘이 만나는 곳,")
+        .pauseFor(300)
+        .callFunction(() => {
+          // 둘째 줄 입력
+          const typewriter2 = new Typewriter(text1, { loop: false });
+
+          typewriter2
+            .typeString("페로 제도에 오신 것을 환영합니다.")
+            .callFunction(() => {
+              // 타이핑 종료 후 5초 뒤 커서 서서히 사라지기
+              setTimeout(() => {
+                const cursors = document.querySelectorAll(".Typewriter__cursor");
+                cursors.forEach(cursor => {
+                  cursor.classList.add("fade-out"); // 애니메이션 시작
+                  setTimeout(() => {
+                    cursor.style.display = "none"; // 완전히 제거
+                  }, 1000); // fade-out과 일치
+                });
+              }, 3000);
+            })
+            .start();
+        })
+        .start();
+    })
+    .start();
+};
+
+
 /******************** section1 ********************** */
 
 // 전체배경깔기
@@ -118,6 +186,7 @@ playPauseBtn.addEventListener("click", function () {
     playPauseBtn.textContent = "play_arrow";
   }
 });
+
 
 /******************** section2 ********************** */
 
@@ -282,3 +351,6 @@ setInterval(createBubble, 500);
 AOS.init({
   once: false 
 });
+
+
+
