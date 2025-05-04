@@ -387,8 +387,8 @@ header nav.on .btns span {
 
 
 /* 관광명소 */
-.title{
-  position : absolute;
+.title {
+  position: absolute;
   top: 0;
   width: 100%;
   height: 500px;
@@ -396,11 +396,11 @@ header nav.on .btns span {
   /* z-index: -1; */
 }
 
-.sights{
+.sights {
   background: url(../images/subpage/title02.jpg) center 60%/cover no-repeat;
 }
 
-.title h1{
+.title h1 {
   text-align: center;
   line-height: 30vh;
   color: #fff;
@@ -428,7 +428,7 @@ footer {
   box-sizing: border-box;
   background: var(--maincolor);
 
-display: none;
+  display: none;
 }
 
 footer .wrap {
