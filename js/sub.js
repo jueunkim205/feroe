@@ -3,22 +3,22 @@ $(function () {
 
   const HeaderimgSources = {
     sub1: [
-      "./images/sub/sub101.png",
-      "./images/sub/sub102.png",
-      "./images/sub/sub103.jpg",
-      "./images/sub/sub_last.png",
+      "./images/submenu/sub101.png",
+      "./images/submenu/sub102.png",
+      "./images/submenu/sub103.jpg",
+      "./images/submenu/sub_last.png",
     ],
     sub2: [
-      "./images/sub/sub201.jpg",
-      "./images/sub/sub202.jpg",
-      "./images/sub/sub203.jpg",
-      "./images/sub/sub_last.png",
+      "./images/submenu/sub201.jpg",
+      "./images/submenu/sub202.jpg",
+      "./images/submenu/sub203.jpg",
+      "./images/submenu/sub_last.png",
     ],
     sub3: [
-      "./images/sub/sub301.jpg",
-      "./images/sub/sub302.jpg",
-      "./images/sub/sub303.jpg",
-      "./images/sub/sub_last.png",
+      "./images/submenu/sub301.jpg",
+      "./images/submenu/sub302.jpg",
+      "./images/submenu/sub303.jpg",
+      "./images/submenu/sub_last.png",
     ],
   };
 
@@ -71,7 +71,7 @@ $(function () {
 
 // aos
 AOS.init({
-  once: false 
+  once: false
 });
 
 
