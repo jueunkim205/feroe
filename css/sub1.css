@@ -437,6 +437,7 @@ header nav.on .btns span {
 
 .section1>ul li:first-child h1 {
   font-size: 4rem;
+  line-height: 0;
 }
 
 .section1>ul li:first-child div {
@@ -471,7 +472,6 @@ header nav.on .btns span {
   letter-spacing: -.5px;
 }
 
-
 .section1>ul img {
   width: 100%;
 }
@@ -482,7 +482,6 @@ header nav.on .btns span {
 
 .section1>ul li:nth-child(2) {
   position: relative;
-
 }
 
 .section1>ul li:nth-child(2) .imgTitle {
@@ -497,32 +496,31 @@ header nav.on .btns span {
   background: linear-gradient(90deg, rgba(80, 131, 176, 1) 0%, rgba(132, 188, 248, 1) 33%, rgba(150, 162, 82, 1) 62%, rgba(222, 224, 143, 1) 100%);
 }
 
-.section1>ul li:nth-child(2) .imgTitle h6 {
+.section1>ul li:nth-child(2) .imgTitle p {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
 
-.section1>ul li:nth-child(2) .imgTitle h6 span:first-child {
+.section1>ul li:nth-child(2) .imgTitle p span:first-child {
   margin-right: .3rem;
 }
 
-.section1>ul li:nth-child(2) .imgTitle h6 span:last-child {
+.section1>ul li:nth-child(2) .imgTitle p span:last-child {
   line-height: 1.6rem;
 }
 
-.section1>ul li:nth-child(2) .imgTitle p {
+.section1>ul li h4 {
   font-size: 1.8rem;
+  line-height: 1.7;
 }
 
 .section1>ul li:last-child .addr {
   margin: 4rem 0 0 3rem;
 }
 
-.section1>ul li:last-child .addr li:nth-child(odd) {
+.section1>ul li:last-child .addr h4 {
   color: #4e4e4e;
-  font-weight: bold;
-  font-size: 1.7rem;
 }
 
 .section1>ul li:last-child .addr>li:nth-child(even) {
