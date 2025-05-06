@@ -406,47 +406,47 @@ header nav.on .btns span {
   font-size: 4rem;
 }
 
-.section1 {
-  margin-top: 50rem;
+main {
+  margin: 55rem 0 20rem;
 }
 
-.section1>ul,
-.section2>ul {
+.sub3 .section1>ul,
+.sub3 .section2>ul {
   max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
-.section1>ul {
+.sub3 .section1>ul {
   gap: 7rem 6rem;
   word-break: keep-all;
 }
 
-.section1>ul>li {
+.sub3 .section1>ul>li {
   box-sizing: border-box;
 }
 
-.section1>ul li:nth-child(odd) {
+.sub3 .section1>ul li:nth-child(odd) {
   width: 40%;
 }
 
-.section1>ul li:nth-child(even) {
+.sub3 .section1>ul li:nth-child(even) {
   width: calc(60% - 6rem);
 }
 
-.section1>ul li:first-child h1 {
+.sub3 .section1>ul li:first-child h1 {
   font-size: 4rem;
   line-height: 0;
 }
 
-.section1>ul li:first-child div {
+.sub3 .section1>ul li:first-child div {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.section1>ul li:first-child div span {
+.sub3 .section1>ul li:first-child div .btns span {
   color: #888;
   cursor: pointer;
   border: 1px solid #ddd;
@@ -456,35 +456,35 @@ header nav.on .btns span {
   transition: border .5s ease;
 }
 
-.section1>ul li:first-child div span:hover {
+.sub3 .section1>ul li:first-child div .btns span:hover {
   border: 1px solid #777;
 }
 
-.section1>ul li:first-child h2 {
+.sub3 .section1>ul li:first-child h2 {
   font-size: 2rem;
   margin: 10rem 0 2rem;
 }
 
-.section1>ul>li:first-child>p,
-.section1>ul li:last-child .desc {
+.sub3 .section1>ul>li:first-child>p,
+.sub3 .section1>ul li:last-child .desc {
   font-size: 1.6rem;
   width: 85%;
   letter-spacing: -.5px;
 }
 
-.section1>ul img {
+.sub3 .section1>ul img {
   width: 100%;
 }
 
-.section1>ul li:nth-child(2) img {
+.sub3 .section1>ul li:nth-child(2) img {
   height: 50rem;
 }
 
-.section1>ul li:nth-child(2) {
+.sub3 .section1>ul li:nth-child(2) {
   position: relative;
 }
 
-.section1>ul li:nth-child(2) .imgTitle {
+.sub3 .section1>ul li:nth-child(2) .imgTitle {
   position: absolute;
   display: flex;
   align-items: center;
@@ -496,79 +496,78 @@ header nav.on .btns span {
   background: linear-gradient(90deg, rgba(80, 131, 176, 1) 0%, rgba(132, 188, 248, 1) 33%, rgba(150, 162, 82, 1) 62%, rgba(222, 224, 143, 1) 100%);
 }
 
-.section1>ul li:nth-child(2) .imgTitle p {
+.sub3 .section1>ul li:nth-child(2) .imgTitle p {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
 
-.section1>ul li:nth-child(2) .imgTitle p span:first-child {
+.sub3 .section1>ul li:nth-child(2) .imgTitle p span:first-child {
   margin-right: .3rem;
 }
 
-.section1>ul li:nth-child(2) .imgTitle p span:last-child {
+.sub3 .section1>ul li:nth-child(2) .imgTitle p span:last-child {
   line-height: 1.6rem;
 }
 
-.section1>ul li h4 {
+.sub3 .section1>ul li h4 {
   font-size: 1.8rem;
   line-height: 1.7;
 }
 
-.section1>ul li:last-child .addr {
+.sub3 .section1>ul li:last-child .addr {
   margin: 4rem 0 0 3rem;
 }
 
-.section1>ul li:last-child .addr h4 {
+.sub3 .section1>ul li:last-child .addr h4 {
   color: #4e4e4e;
 }
 
-.section1>ul li:last-child .addr>li:nth-child(even) {
+.sub3 .section1>ul li:last-child .addr>li:nth-child(even) {
   font-size: 1.5rem;
 }
 
-.section1>ul li:last-child .addr li:nth-child(2) {
+.sub3 .section1>ul li:last-child .addr li:nth-child(2) {
   margin-bottom: 2rem;
 }
 
 
 /* section2 */
-.section2 {
+.sub3 .section2 {
   margin-top: 15rem;
 }
 
-.section2 ul {
+.sub3 .section2 ul {
   gap: 4rem;
 }
 
-.section2 ul li {
+.sub3 .section2 ul li {
   width: calc(50% - 2rem);
   box-sizing: border-box;
   border-radius: 2rem;
   overflow: hidden;
 }
 
-.section2 ul li:nth-child(odd) {
+.sub3 .section2 ul li:nth-child(odd) {
   margin-bottom: 3rem;
 }
 
-.section2 ul li:nth-child(even) {
+.sub3 .section2 ul li:nth-child(even) {
   margin-top: 3rem;
 }
 
-.section2 p,
-.section2 img {
+.sub3 .section2 p,
+.sub3 .section2 img {
   width: 100%;
   height: 100%;
 }
 
-.section2 img {
+.sub3 .section2 img {
   object-fit: cover;
 }
 
 
 footer {
-  margin-top: 10rem;
   position: relative;
   width: 100%;
   box-sizing: border-box;
