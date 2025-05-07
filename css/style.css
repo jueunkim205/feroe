@@ -1236,7 +1236,6 @@ footer .down .right li:hover a {
     padding: 0;
   }
 
-
   header nav .sub4 li>ul li a span,
   header nav .sub5 li>ul li a span {
     display: none;
@@ -1249,7 +1248,6 @@ footer .down .right li:hover a {
 
 
   header nav .btns {
-    display: flex;
     align-items: center;
     gap: 3rem;
   }
