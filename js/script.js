@@ -1,6 +1,5 @@
+/******************** header ********************** */
 $(function () {
-  /******************** header ********************** */
-
   const HeaderimgSources = {
     sub1: [
       "./images/submenu/sub101.png",
@@ -65,6 +64,25 @@ $(function () {
   });
 });
 
+/******************** sidemenu ********************** */
+let sideBtn = document.querySelector("nav .btns");
+let sideMenu = document.querySelector("#sideMenu");
+let closeBtn = document.querySelector("#sideMenu span");
+let sideBg = document.querySelector("#sideMenu .sideBg");
+
+sideBtn.onclick = function () {
+  sideMenu.classList.add("on");
+};
+
+closeBtn.onclick = function () {
+  sideMenu.classList.remove("on");
+};
+
+// sideBg 클릭 시 사이드메뉴 닫기
+sideBg.onclick = function () {
+  sideMenu.classList.remove("on");
+};
+
 
 /******************** top버튼 ********************** */
 let topBtn = document.getElementById("topbtn");
@@ -86,7 +104,6 @@ window.addEventListener("scroll", () => {
     topBtn.style.transform = "translateX(0)";
   }
 });
-
 
 /******************** 타이핑효과 ********************** */
 window.onload = function () {
@@ -116,8 +133,10 @@ window.onload = function () {
             .callFunction(() => {
               // 타이핑 종료 후 5초 뒤 커서 서서히 사라지기
               setTimeout(() => {
-                const cursors = document.querySelectorAll(".Typewriter__cursor");
-                cursors.forEach(cursor => {
+                const cursors = document.querySelectorAll(
+                  ".Typewriter__cursor"
+                );
+                cursors.forEach((cursor) => {
                   cursor.classList.add("fade-out"); // 애니메이션 시작
                   setTimeout(() => {
                     cursor.style.display = "none"; // 완전히 제거
@@ -131,7 +150,6 @@ window.onload = function () {
     })
     .start();
 };
-
 
 /******************** section1 ********************** */
 
@@ -186,7 +204,6 @@ playPauseBtn.addEventListener("click", function () {
     playPauseBtn.textContent = "play_arrow";
   }
 });
-
 
 /******************** section2 ********************** */
 
@@ -349,8 +366,5 @@ setInterval(createBubble, 500);
 
 // aos
 AOS.init({
-  once: false 
+  once: false,
 });
-
-
-
