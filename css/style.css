@@ -29,15 +29,9 @@ html {
   font-size: 10px;
   --maincolor: #009ee3;
   /* Faroese Blue */
-  --primary1: #0065BD;
-  /* Faroese Blue */
-  --primary2: #014751;
-  /* Faroese Blue */
-  --secondary: #6B8E23;
+  --primary1: #6B8E23;
   /* Velvety Green */
-  --secondary2: #5C7259;
-  /* Velvety Green */
-  /* --secondary2: #5C7259; Velvety Green */
+  --primary2: #5C7259;
 }
 
 .wrap {
@@ -256,9 +250,9 @@ header nav .sub5 .right h2 a {
   text-align: center;
   letter-spacing: -1px;
   word-break: keep-all;
-  border: 1px solid var(--secondary2);
+  border: 1px solid var(--primary2);
   border-radius: 5rem;
-  background: linear-gradient(to right, var(--secondary2) 50%, #fff 50%);
+  background: linear-gradient(to right, var(--primary2) 50%, #fff 50%);
   background-size: 200% 100%;
   background-position: right;
   transition: all .35s ease-out;
@@ -288,15 +282,15 @@ header nav .sub5 .right li>a {
 
 header nav .sub4 .right li>a:hover,
 header nav .sub5 .right li>a:hover {
-  color: var(--secondary2);
-  border: 1px solid var(--secondary2);
+  color: var(--primary2);
+  border: 1px solid var(--primary2);
 }
 
 header nav .sub4 .right li>a::after,
 header nav .sub5 .right li>a::after {
   position: absolute;
   content: '\f061';
-  color: var(--secondary2);
+  color: var(--primary2);
   font-size: 1.5rem;
   font-weight: 900;
   right: -2rem;
@@ -759,9 +753,9 @@ section .left .text p:last-child {
   padding: 1.2rem 2rem;
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--secondary2);
+  color: var(--primary2);
   border-radius: 50%;
-  border: 1px solid var(--secondary2);
+  border: 1px solid var(--primary2);
 }
 
 .section2 .big {
