@@ -485,6 +485,12 @@ header nav.on .btns span {
   text-shadow: 1rem 1rem 5rem rgba(68, 68, 68, 0.8);
 }
 
+.Typewriter__cursor {
+  font-family: Pretendard, sans-serif;
+  font-weight: normal;
+  line-height: 1;
+}
+
 .main_bg #textType {
   font-size: 3rem;
 }
@@ -1350,17 +1356,19 @@ footer .down .right li:hover a {
   .section2 .wrap {
     flex-direction: column;
   }
+
   .section2 .left {
     display: flex;
     border: 1px solid #000;
   }
+
   .section2 .left .text {
-    position : absolute;
+    position: absolute;
     top: -10rem;
   }
 
   .section2 .swiper {
-   /* top: 50%; */
-   position : relative;
+    /* top: 50%; */
+    position: relative;
   }
 }
