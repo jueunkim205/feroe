@@ -59,7 +59,7 @@ a {
   letter-spacing: -1px;
   word-break: keep-all;
   font-family: 'GowunBatang-Regular', sans-serif;
-  text-shadow: 1rem 1rem 5rem rgba(10, 59, 107, 0.5);
+  text-shadow: 1rem 1rem 2rem rgba(10, 59, 107, 0.5);
 }
 
 header {
@@ -393,13 +393,14 @@ header nav.on .btns span {
   width: 100%;
   height: 50rem;
   border-radius: 0 0 5rem 5rem;
+  box-shadow: 1px 7px 16px rgba(0, 0, 0, 0.3);
 }
 
 .activities {
   background: url(../images/subpage/title01.jpg) center 70%/cover no-repeat;
 }
 
-.sights {
+.places {
   background: url(../images/subpage/title02.jpg) center 60%/cover no-repeat;
 }
 
@@ -411,15 +412,15 @@ header nav.on .btns span {
   font-size: 4rem;
 }
 
-
 main {
-  margin: 55rem 0 20rem;
+  margin: 50rem 0 20rem;
   font-family: Pretendard, sans-serif;
 }
 
 .sub1 .section1 ul,
-.sub3 .section1>ul,
-.sub3 .section2>ul {
+.sub3 .section1 ul,
+.sub4 .section1>ul,
+.sub4 .section2>ul {
   width: 100%;
   max-width: 1440px;
   display: flex;
@@ -512,38 +513,224 @@ section img {
   font-size: 1.8rem;
 }
 
-/* ************ sub3 칼루린 *********** */
 
 
-.sub3 .section1>ul {
+/* ************ sub3 명소 *********** */
+
+.sub3 .section1 {
+  text-align: center;
+}
+
+.sub3 .section1 h1 {
+  font-size: 3rem;
+  text-shadow: 1rem 1rem 3rem rgba(00, 00, 00, 0.5)
+}
+
+.sub3 .section1 ul {
+  margin: 5rem auto;
+  gap: 4rem 3rem;
+}
+
+.sub3 .section1 ul li {
+  width: calc((100% - 6rem) / 3);
+  height: 40rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  transition: transform .5s;
+  border-radius: 2rem;
+}
+
+.sub3 .section1 ul li:hover,
+.sub3 .section1>a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.12);
+}
+
+.sub3 .section1 ul li>p {
+  width: 100%;
+  height: 33rem;
+}
+
+.sub3 .section1 ul li>p img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sub3 .section1 ul li h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  word-break: keep-all;
+}
+
+.sub3 .section1>a {
+  display: block;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  background: url(../images/subpage/sub3/divbg.jpg) center/cover no-repeat;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 2rem;
+  transition: transform .5s;
+  text-shadow: 1rem 1rem 2rem rgba(00, 00, 00, 0.5)
+}
+
+.sub3 .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000009a;
+  z-index: 999;
+}
+
+.sub3 .modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub3 .modal .modalWrap {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 80rem;
+  background: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+.sub3 .modal .up {
+  width: 100%;
+  height: 30rem;
+  background: #000;
+  overflow: hidden;
+}
+
+.sub3 .sub3swiper,
+.sub3 .sub3swiper .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.sub3 .sub3swiper .swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #000;
+}
+
+.sub3 #control .swiper-button-prev:after {
+  left: 1rem;
+}
+
+.sub3 #control .swiper-button-next:after {
+  right: 1rem;
+}
+
+.sub3 #control .swiper-button-next:after,
+.sub3 #control .swiper-button-prev:after {
+  position: absolute;
+  color: var(--maincolor);
+  background: #ffffff79;
+  padding: 1.7rem 2.3rem;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 3rem;
+  box-shadow: 3px 2px 8px rgba(0, 00, 00, .2);
+}
+
+.sub3 #control .swiper-pagination-bullet-active {
+  background: var(--maincolor);
+}
+
+.sub3 .modal .down {
+  padding: 2rem 10rem;
+  justify-content: center;
+  word-break: keep-all;
+  box-sizing: border-box;
+}
+
+.sub3 .modal .down h2 {
+  font-size: 2.5rem;
+  color: #111;
+}
+
+.sub3 .modal .down p {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: #444;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.sub3 .modal .down a {
+  display: inline-block;
+  border: 1px solid #888;
+  text-align: center;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  color: #222;
+  transition: .3s;
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.12);
+}
+
+.sub3 .modal .down a:hover {
+  background: #222;
+  color: #fff;
+}
+
+.sub3 .mClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+/* ************ sub4 칼루린 *********** */
+
+.sub4 .section1>ul {
   gap: 7rem 6rem;
   word-break: keep-all;
 }
 
-.sub3 .section1>ul>li {
+.sub4 .section1>ul>li {
   box-sizing: border-box;
 }
 
-.sub3 .section1>ul li:nth-child(odd) {
+.sub4 .section1>ul li:nth-child(odd) {
   width: 40%;
 }
 
-.sub3 .section1>ul li:nth-child(even) {
+.sub4 .section1>ul li:nth-child(even) {
   width: calc(60% - 6rem);
 }
 
-.sub3 .section1>ul li:first-child h1 {
+.sub4 .section1>ul li:first-child h1 {
   font-size: 4rem;
   line-height: 0;
 }
 
-.sub3 .section1>ul li:first-child div {
+.sub4 .section1>ul li:first-child div {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.sub3 .section1>ul li:first-child div .btns span {
+.sub4 .section1>ul li:first-child div .btns span {
   color: #888;
   cursor: pointer;
   border: 1px solid #ddd;
@@ -553,35 +740,36 @@ section img {
   transition: border .5s ease;
 }
 
-.sub3 .section1>ul li:first-child div .btns span:hover {
+.sub4 .section1>ul li:first-child div .btns span:hover {
   border: 1px solid #777;
 }
 
-.sub3 .section1>ul li:first-child h2 {
+.sub4 .section1>ul li:first-child h2 {
   font-size: 2rem;
   margin: 10rem 0 2rem;
 }
 
-.sub3 .section1>ul>li:first-child>p,
-.sub3 .section1>ul li:last-child .desc {
+.sub4 .section1>ul>li:first-child>p,
+.sub4 .section1>ul li:last-child .desc {
   font-size: 1.6rem;
   width: 85%;
   letter-spacing: -.5px;
 }
 
-.sub3 .section1>ul img {
+.sub4 .section1>ul img {
   width: 100%;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.sub3 .section1>ul li:nth-child(2) img {
+.sub4 .section1>ul li:nth-child(2) img {
   height: 50rem;
 }
 
-.sub3 .section1>ul li:nth-child(2) {
+.sub4 .section1>ul li:nth-child(2) {
   position: relative;
 }
 
-.sub3 .section1>ul li:nth-child(2) .imgTitle {
+.sub4 .section1>ul li:nth-child(2) .imgTitle {
   position: absolute;
   display: flex;
   align-items: center;
@@ -593,67 +781,68 @@ section img {
   background: linear-gradient(90deg, rgba(80, 131, 176, 1) 0%, rgba(132, 188, 248, 1) 33%, rgba(150, 162, 82, 1) 62%, rgba(222, 224, 143, 1) 100%);
 }
 
-.sub3 .section1>ul li:nth-child(2) .imgTitle p {
+.sub4 .section1>ul li:nth-child(2) .imgTitle p {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
 
-.sub3 .section1>ul li:nth-child(2) .imgTitle p span:first-child {
+.sub4 .section1>ul li:nth-child(2) .imgTitle p span:first-child {
   margin-right: .3rem;
 }
 
-.sub3 .section1>ul li:nth-child(2) .imgTitle p span:last-child {
+.sub4 .section1>ul li:nth-child(2) .imgTitle p span:last-child {
   line-height: 1.6rem;
 }
 
-.sub3 .section1>ul li h4 {
+.sub4 .section1>ul li h4 {
   font-size: 1.8rem;
   line-height: 1.7;
 }
 
-.sub3 .section1>ul li:last-child .addr {
+.sub4 .section1>ul li:last-child .addr {
   margin: 4rem 0 0 3rem;
 }
 
-.sub3 .section1>ul li:last-child .addr h4 {
+.sub4 .section1>ul li:last-child .addr h4 {
   color: #4e4e4e;
 }
 
-.sub3 .section1>ul li:last-child .addr>li:nth-child(even) {
+.sub4 .section1>ul li:last-child .addr>li:nth-child(even) {
   font-size: 1.5rem;
 }
 
-.sub3 .section1>ul li:last-child .addr li:nth-child(2) {
+.sub4 .section1>ul li:last-child .addr li:nth-child(2) {
   margin-bottom: 2rem;
 }
 
 
 /* section2 */
-.sub3 .section2 {
+.sub4 .section2 {
   margin-top: 15rem;
 }
 
-.sub3 .section2 ul {
+.sub4 .section2 ul {
   gap: 4rem;
 }
 
-.sub3 .section2 ul li {
+.sub4 .section2 ul li {
   width: calc(50% - 2rem);
   box-sizing: border-box;
   border-radius: 2rem;
   overflow: hidden;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.sub3 .section2 ul li:nth-child(odd) {
+.sub4 .section2 ul li:nth-child(odd) {
   margin-bottom: 3rem;
 }
 
-.sub3 .section2 ul li:nth-child(even) {
+.sub4 .section2 ul li:nth-child(even) {
   margin-top: 3rem;
 }
 
-.sub3 .section2 p {
+.sub4 .section2 p {
   width: 100%;
   height: 100%;
 }

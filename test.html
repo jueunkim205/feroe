@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미니멀 여행지 갤러리</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #333;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .destination-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .destination-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .destination-card:hover .destination-image {
+      transform: scale(1.05);
+    }
+
+    .destination-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+
+    .destination-card:hover .destination-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .destination-title {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+
+    .destination-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+    }
+
+    .destination-tag {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-top: 12px;
+      margin-right: 6px;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 1000px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .modal-title {
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .modal-image {
+      flex: 1;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .modal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-description {
+      flex: 1;
+      margin-top: 1.5rem;
+    }
+
+    .description-text {
+      color: #555;
+    }
+
+    @media (min-width: 768px) {
+      .modal-body {
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      .modal-description {
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>탐험하고 싶은 여행지</h1>
+      <p class="subtitle">전 세계 아름다운 휴양지에서 잊을 수 없는 추억을 만드세요</p>
+    </header>
+
+    <div class="travel-grid">
+      <div class="destination-card" data-id="destination1">
+        <img src="/api/placeholder/800/1000" alt="산토리니" class="destination-image">
+        <div class="destination-overlay">
+          <h3 class="destination-title">산토리니</h3>
+          <p class="destination-subtitle">그리스</p>
+        </div>
+      </div>
+      <div class="destination-card" data-id="destination2">
+        <img src="/api/placeholder/800/1000" alt="교토" class="destination-image">
+        <div class="destination-overlay">
+          <h3 class="destination-title">교토</h3>
+          <p class="destination-subtitle">일본</p>
+        </div>
+      </div>
+      <div class="destination-card" data-id="destination3">
+        <img src="/api/placeholder/800/1000" alt="바르셀로나" class="destination-image">
+        <div class="destination-overlay">
+          <h3 class="destination-title">바르셀로나</h3>
+          <p class="destination-subtitle">스페인</p>
+        </div>
+      </div>
+      <div class="destination-card" data-id="destination4">
+        <img src="/api/placeholder/800/1000" alt="발리" class="destination-image">
+        <div class="destination-overlay">
+          <h3 class="destination-title">발리</h3>
+          <p class="destination-subtitle">인도네시아</p>
+        </div>
+      </div>
+      <div class="destination-card" data-id="destination5">
+        <img src="/api/placeholder/800/1000" alt="취리히" class="destination-image">
+        <div class="destination-overlay">
+          <h3 class="destination-title">취리히</h3>
+          <p class="destination-subtitle">스위스</p>
+        </div>
+      </div>
+      <div class="destination-card" data-id="destination6">
+        <img src="/api/placeholder/800/1000" alt="뉴욕" class="destination-image">
+        <div class="destination-overlay">
+          <h3 class="destination-title">뉴욕</h3>
+          <p class="destination-subtitle">미국</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="destinationModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">여행지 이름</h2>
+        <button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="/api/placeholder/1200/800" alt="여행지">
+        </div>
+        <div class="modal-description">
+          <p class="description-text">여행지에 대한 설명이 여기에 표시됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const destinations = {
+      destination1: {
+        title: "산토리니",
+        location: "그리스",
+        image: "/api/placeholder/1200/800",
+        description: "산토리니는 에게해의 화산섬으로, 하얀 집과 파란 지붕의 조화가 아름다운 그리스의 대표 휴양지입니다."
+      },
+      destination2: {
+        title: "교토",
+        location: "일본",
+        image: "/api/placeholder/1200/800",
+        description: "교토는 일본의 전통과 역사를 간직한 도시로, 사원과 정원, 기온 거리 등 볼거리가 풍부합니다."
+      },
+      destination3: {
+        title: "바르셀로나",
+        location: "스페인",
+        image: "/api/placeholder/1200/800",
+        description: "바르셀로나는 가우디 건축과 지중해 풍경이 어우러진 활기찬 도시입니다."
+      },
+      destination4: {
+        title: "발리",
+        location: "인도네시아",
+        image: "/api/placeholder/1200/800",
+        description: "발리는 아름다운 해변과 이국적인 문화, 자연이 가득한 신들의 섬입니다."
+      },
+      destination5: {
+        title: "취리히",
+        location: "스위스",
+        image: "/api/placeholder/1200/800",
+        description: "취리히는 스위스의 최대 도시로, 깨끗한 호수와 알프스 풍경, 세련된 분위기가 매력입니다."
+      },
+      destination6: {
+        title: "뉴욕",
+        location: "미국",
+        image: "/api/placeholder/1200/800",
+        description: "뉴욕은 세계적인 문화와 경제의 중심지로, 다양한 매력을 지닌 메트로폴리스입니다."
+      }
+    };
+
+    const modal = document.getElementById('destinationModal');
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalImage = modal.querySelector('.modal-image img');
+    const modalDescription = modal.querySelector('.description-text');
+    const closeButton = modal.querySelector('.close-button');
+
+    document.querySelectorAll('.destination-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const destinationId = card.getAttribute('data-id');
+        const data = destinations[destinationId];
+
+        modalTitle.textContent = `${data.title}, ${data.location}`;
+        modalImage.src = data.image;
+        modalImage.alt = data.title;
+        modalDescription.textContent = data.description;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeButton.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -224,11 +224,11 @@ var s2Swiper = new Swiper(".mySwiper", {
 });
 
 let sec2SwiperSlide = document.querySelectorAll(".section2 .swiper-slide");
-// 슬라이드 이미지 넣기
+// 슬라이드 이미지 넣기 - 한 장씩 뒤로 밀기 위해 인덱스 조정
 sec2SwiperSlide.forEach(function (v, k) {
-  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sec2/img0${
-    (k % sec2SwiperSlide.length) + 1
-  }.jpg)`;
+  // 마지막 이미지는 첫 번째 슬라이드에, 나머지는 한 칸씩 뒤로 밀기
+  let imageIndex = k === 0 ? sec2SwiperSlide.length : k;
+  v.querySelector(".imgbox").style.backgroundImage = `url(./images/sec2/img0${imageIndex}.jpg)`;
 });
 
 updateBigImage();
@@ -283,7 +283,7 @@ s2Swiper.on("slideChange", function () {
   });
 });
 
-/******************** section2 ********************** */
+/******************** 배경 ********************** */
 
 const bg = document.querySelector(".section2 .scroll-bg");
 const section2 = document.querySelector(".section2");
