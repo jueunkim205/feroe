@@ -368,3 +368,22 @@ setInterval(createBubble, 500);
 AOS.init({
   once: false,
 });
+
+
+function updateAOS() {
+  const list = document.querySelectorAll(".section3 .con li");
+
+  list.forEach((item, k) => {
+    if (window.innerWidth < 1024) {
+      item.setAttribute("data-aos-duration", "500");
+      item.setAttribute("data-aos-delay", "0");
+      item.setAttribute("data-aos-offset", "0");
+    } else {
+      item.setAttribute("data-aos-duration", "700");
+      item.setAttribute("data-aos-delay", "400");
+      item.setAttribute("data-aos-offset", "100");
+    }
+  });
+
+  AOS.refresh(); // 꼭 필요!
+}

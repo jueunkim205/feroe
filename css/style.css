@@ -25,7 +25,6 @@ html {
 }
 
 :root {
-  /* rem의 기준 */
   font-size: 10px;
   --maincolor: #009ee3;
   /* Faroese Blue */
@@ -38,7 +37,6 @@ html {
   box-sizing: border-box;
 }
 
-/* 공통 */
 ul {
   list-style: none;
 }
@@ -55,6 +53,10 @@ a {
   font-family: 'GowunBatang-Regular', sans-serif;
   text-shadow: 1rem 1rem 2rem rgba(10, 59, 107, 0.5);
 }
+
+
+
+/* ----------- header ----------- */
 
 header {
   width: 100%;
@@ -1009,143 +1011,126 @@ path {
 }
 
 .section4 .wrap {
-  width: 100%;
-  padding: 10rem 0;
-  background: var(--maincolor);
-}
-
-.section4 .wrap .con {
   display: flex;
+  gap: 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  height: 35vh;
+  padding: 10rem 2rem;
+  background: var(--maincolor);
+  flex-wrap: wrap;
 }
 
 .section4 .left {
-  width: 50%;
-  height: 100%;
-  border-radius: 0rem 10rem 0 0;
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 2rem;
   overflow: hidden;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .section4 .left a {
-  position: relative;
   display: block;
+  color: inherit;
+  text-align: center;
+  padding: 2rem;
+}
+
+.section4 .left .img-wrap {
   width: 100%;
-  height: 100%;
+  height: 240px;
   overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.section4 .left a>p {
-  width: 100%;
-  height: 100%;
-  font-size: 0;
-}
-
-.section4 .left a p img {
+.section4 .left .img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(60%);
-  transition: .5s;
 }
 
-.section4 .left:hover a p img {
-  transform: scale(1.3);
-}
-
-.section4 .left a .text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  font-family: Pretendard, sans-serif;
-}
-
-.section4 .left a .text p {
-  color: #fff;
-  text-shadow: 8px 5px 25px rgba(0, 58, 107, .15);
-}
-
-.section4 .left a .text p:first-child {
-  font-size: 3rem;
-  font-weight: 700;
+.section4 .left h3 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.section4 .left a .text p:nth-child(2) {
-  font-size: 1.7rem;
-  font-weight: 400;
+.section4 .left p {
+  font-size: 1.4rem;
+  color: #444;
 }
 
-.section4 .left .text .go {
+.section4 .left .go {
   display: inline-block;
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 4rem auto 0;
-  padding: 1rem 3rem;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  padding: 0.6rem 1.5rem;
   border: 1px solid #fff;
-  border-radius: 5rem;
-  background: linear-gradient(to right, #fff 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position: right;
-  transition: all .35s ease-out;
+  color: #fff;
+  border-radius: 2rem;
+  background: transparent;
+  transition: 0.3s ease;
 }
 
-.section4 .left:hover .text .go {
-  background-position: left;
-  color: #222;
+.section4 .left .go:hover {
+  background: #fff;
+  color: var(--maincolor);
 }
 
 .section4 .right {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  padding: 0 2rem;
-  gap: 5rem 2%;
-  height: 100%;
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+  padding: 1rem 0;
+  list-style: none;
 }
 
 .section4 .right li {
-  width: calc((100% - 4%) / 3);
-  box-sizing: border-box;
-}
-
-.section4 .right li a {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.section4 .right li h2 {
-  color: #fff;
-  font-size: 2rem;
-}
-
-.section4 .right li a p {
-  width: 9.5rem;
-  padding: 1rem;
-  margin-bottom: 2rem;
   background: #fff;
+  border-radius: 2rem;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.section4 .right li:hover {
+  transform: translateY(-5px);
+}
+
+.section4 .right li .icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
   border-radius: 50%;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.section4 .right li a p img {
-  width: 100%;
-  transition: 1s;
+.section4 .right li .icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }
 
-.section4 .right li:hover a p img {
-  transform: rotateY(360deg);
+.section4 .right li h3 {
+  font-size: 1.6rem;
+  color: #111;
+}
+
+@media screen and (max-width: 768px) {
+  .guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .guide-grid h3 {
+    font-size: 1.6rem;
+  }
 }
 
 
@@ -1326,11 +1311,6 @@ footer .down .right li:hover a {
     display: none;
   }
 
-  header nav .logo h1 {
-    color: red;
-    /* 반응형확인용 */
-  }
-
   .section1 ul li {
     width: calc(100% / 3);
   }
@@ -1347,22 +1327,143 @@ footer .down .right li:hover a {
     left: 25%;
   }
 
+
+}
+
+
+
+/* ============================
+   ✅ 반응형 CSS 통합본
+   - section2, section3, section4
+   - 1024px 이하 / 768px 이하 대응
+   ============================ */
+@media screen and (max-width: 1024px) {
   .section2 .wrap {
     flex-direction: column;
+    height: auto;
+    padding-bottom: 6rem;
   }
 
   .section2 .left {
-    display: flex;
-    border: 1px solid #000;
-  }
-
-  .section2 .left .text {
-    position: absolute;
-    top: -10rem;
+    width: 100%;
   }
 
   .section2 .swiper {
-    /* top: 50%; */
     position: relative;
+    width: 100%;
+    left: auto;
+    bottom: auto;
+    margin-top: 4rem;
   }
+
+  .section2 #control {
+    position: static;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section2 .big {
+    width: 100%;
+    height: 40vh;
+    margin: 4rem 0 0;
+  }
+
+  .section3 .wrap {
+    flex-direction: column;
+  }
+
+  .section3 .left {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section3 .con {
+    gap: 4rem 0;
+  }
+
+  .section3 .con li {
+    width: 100%;
+    margin: 0 !important;
+    flex-direction: column;
+  }
+
+  .section3 .con li a>p {
+    width: 100%;
+    height: auto;
+  }
+
+  .section3 .con li .text {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .section4 .wrap {
+    flex-direction: column;
+    padding: 6rem 2rem;
+  }
+
+  .section4 .left {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section4 .right {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 0;
+  }
+
+  .section4 .right li {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section2 .left .tag {
+    justify-content: center;
+    gap: 0.5rem;
+    margin-left: 0;
+  }
+
+  .section2 .left .tag li p {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .section2 .swiper-slide div p {
+    font-size: 1.8rem;
+  }
+
+  .section2 .swiper-slide div span {
+    font-size: 1.2rem;
+  }
+
+  .section3 .con {
+    gap: 3rem 0;
+  }
+
+  .section4 .wrap {
+    flex-direction: column;
+    padding: 6rem 2rem;
+  }
+
+  .section4 .left {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section4 .right {
+    grid-template-columns: repeat(2, 1fr);
+    /* ← 2개씩 나열 */
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .section4 .right li {
+    padding: 1.5rem;
+  }
+}
 }
