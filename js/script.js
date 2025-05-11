@@ -85,11 +85,17 @@ sideBg.onclick = function () {
 
 
 /******************** top버튼 ********************** */
-let topBtn = document.getElementById("topbtn");
+const topBtn = document.getElementById("topbtn");
 
-topBtn.onclick = function () {
+topBtn.addEventListener("click", function () {
+  this.classList.add("clicked");
+
+  setTimeout(() => {
+    this.classList.remove("clicked");
+  }, 150); // 0.15초 뒤 효과 제거
+
   window.scrollTo({ top: 0, behavior: "smooth" });
-};
+});
 
 window.addEventListener("scroll", () => {
   let scY = window.scrollY;
@@ -104,6 +110,7 @@ window.addEventListener("scroll", () => {
     topBtn.style.transform = "translateX(0)";
   }
 });
+
 
 /******************** 타이핑효과 ********************** */
 window.onload = function () {
