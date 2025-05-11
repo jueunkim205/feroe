@@ -375,7 +375,7 @@ function updateAOS() {
 
   list.forEach((item, k) => {
     if (window.innerWidth < 1024) {
-      item.setAttribute("data-aos-duration", "500");
+      item.setAttribute("data-aos-duration", "300");
       item.setAttribute("data-aos-delay", "0");
       item.setAttribute("data-aos-offset", "0");
     } else {

@@ -922,14 +922,14 @@ section .left .text p:last-child {
 
 /* ----------- section4 ----------- */
 
-.wavebox {
+.section4 .wavebox {
   position: relative;
   width: 100%;
   height: 30vh;
   overflow: hidden;
 }
 
-svg {
+.section4 svg {
   position: absolute;
   bottom: 0;
   width: 200%;
@@ -938,13 +938,13 @@ svg {
   will-change: transform;
 }
 
-.wave2 {
+.section4 .wave2 {
   animation: waveMove2 15s linear infinite;
   opacity: 0.5;
   height: 120%;
 }
 
-path {
+.section4 path {
   fill: var(--maincolor);
   animation: waveScale 6s ease-in-out infinite;
   transform-origin: center;
@@ -984,7 +984,7 @@ path {
 }
 
 /* 거품 효과 */
-.bubbles {
+.section4 .bubbles {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -993,7 +993,7 @@ path {
   pointer-events: none;
 }
 
-.bubble {
+.section4 .bubble {
   position: absolute;
   bottom: 0;
   width: 15px;
@@ -1016,7 +1016,8 @@ path {
   }
 }
 
-.section4 {
+.section4 .con {
+  width: 100%;
   background: var(--maincolor);
 }
 
@@ -1025,8 +1026,9 @@ path {
   gap: 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10rem 2rem;
+  padding: 10rem 3rem;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .section4 .left {
@@ -1037,6 +1039,7 @@ path {
   padding: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .section4 .left .img-wrap {
@@ -1337,17 +1340,6 @@ footer .down .right li:hover a {
     left: 25%;
   }
 
-}
-
-
-
-/* ============================
-   ✅ 반응형 CSS 통합본
-   - section2, section3, section4
-   - 1024px 이하 / 768px 이하 대응
-   ============================ */
-@media screen and (max-width: 1024px) {
-
   .section2 .wrap {
     flex-direction: column;
     height: auto;
@@ -1459,31 +1451,32 @@ footer .down .right li:hover a {
 
 @media screen and (max-width: 768px) {
   .section2 .left .tag {
+    width: 100%;
     justify-content: center;
-    gap: 0.5rem;
-    margin-left: 0;
   }
 
-  .section2 .left .tag li p {
-    font-size: 1.2rem;
-    padding: 0.8rem 1.5rem;
-  }
-
-  .section2 .swiper-slide div p {
-    font-size: 1.8rem;
-  }
-
-  .section2 .swiper-slide div span {
-    font-size: 1.2rem;
+  .section2 #control {
+    width: 80%;
+    bottom: 2.5rem;
   }
 
   .section3 .con {
     gap: 3rem 0;
   }
 
+  .section3 .con li {
+    width: 100%;
+    height: auto;
+  }
+
+  .section3 .con li a>p {
+    height: 20vh;
+    border-radius: 1rem;
+  }
+
   .section4 .wrap {
     flex-direction: column;
-    padding: 6rem 2rem;
+    gap: 0;
   }
 
   .section4 .left {
@@ -1493,7 +1486,6 @@ footer .down .right li:hover a {
 
   .section4 .right {
     grid-template-columns: repeat(2, 1fr);
-    /* ← 2개씩 나열 */
     gap: 2rem;
     padding: 2rem 0;
   }
