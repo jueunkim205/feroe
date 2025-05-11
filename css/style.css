@@ -631,13 +631,15 @@ header nav.on .btns span {
   display: flex;
   height: 100vh;
   gap: 3rem;
-  padding: 0 1rem;
+  padding: 0 3rem;
+  box-sizing: border-box;
 }
 
 .section2 .left {
   position: relative;
   flex: 1;
   padding-top: 3rem;
+  box-sizing: border-box;
 }
 
 section .left .text p:first-child {
@@ -712,7 +714,7 @@ section .left .text p:last-child {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 0 5px 12px rgba(0, 58, 107, .25);
+  box-shadow: 0 5px 5px rgba(0, 58, 107, .2);
 }
 
 .section2 .swiper-slide a div {
@@ -723,8 +725,8 @@ section .left .text p:last-child {
   justify-content: center;
   background: #fff;
   border-radius: 10rem;
-  margin-top: 2rem;
-  box-shadow: 0 5px 12px rgba(0, 58, 107, .25);
+  margin: 2rem auto 0;
+  box-shadow: 0 3px 3px rgba(0, 58, 107, .1);
   font-family: Pretendard, sans-serif;
   color: #222;
 }
@@ -742,17 +744,19 @@ section .left .text p:last-child {
 
 .section2 #control {
   position: absolute;
+  gap: .5rem;
   bottom: 52vh;
   right: 45px;
-  width: 20%;
+  width: 11rem;
   height: 50px;
   box-sizing: border-box;
+  z-index: 50;
 }
 
 .section2 #control .swiper-button-next:after,
 .section2 #control .swiper-button-prev:after {
   background: #fff;
-  padding: 1.2rem 2rem;
+  padding: 1rem 1.5rem;
   font-size: 2.5rem;
   font-weight: bold;
   color: var(--primary2);
@@ -809,20 +813,20 @@ section .left .text p:last-child {
 }
 
 .section3 .left .text {
-  margin-top: 13rem;
+  margin: 13rem 1vw 0 2vw;
 }
 
 .section3 .con {
   display: flex;
   flex-wrap: wrap;
-  gap: 0 10rem;
+  gap: 0 3vw;
   flex: 1;
 }
 
 .section3 .con li {
   display: flex;
   text-align: center;
-  width: calc((100% - 10rem) / 2);
+  width: calc(50% - 1.5vw);
   box-sizing: border-box;
 }
 
@@ -1327,7 +1331,6 @@ footer .down .right li:hover a {
     left: 25%;
   }
 
-
 }
 
 
@@ -1341,36 +1344,56 @@ footer .down .right li:hover a {
   .section2 .wrap {
     flex-direction: column;
     height: auto;
-    padding-bottom: 6rem;
   }
 
   .section2 .left {
     width: 100%;
+    text-align: center;
+  }
+
+  .section2 .left .tag {
+    width: 80%;
+    margin: 3rem auto;
   }
 
   .section2 .swiper {
     position: relative;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    left: auto;
-    bottom: auto;
-    margin-top: 4rem;
+    height: auto;
+    margin: 4rem auto 0;
+  }
+
+  .section2 .swiper-slide {
+    height: 55vh;
+  }
+
+  .section2 .swiper-slide a {
+    padding: 0;
+  }
+
+  .section2 .swiper-slide a div {
+    width: 50%;
+    height: auto;
+    padding: 1rem 0;
   }
 
   .section2 #control {
-    position: static;
-    margin: 2rem auto;
-    display: flex;
-    justify-content: center;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    box-sizing: border-box;
   }
 
   .section2 .big {
-    width: 100%;
-    height: 40vh;
-    margin: 4rem 0 0;
+    display: none;
   }
 
   .section3 .wrap {
     flex-direction: column;
+    padding-top: 5rem;
   }
 
   .section3 .left {
@@ -1381,19 +1404,37 @@ footer .down .right li:hover a {
     margin-bottom: 4rem;
   }
 
-  .section3 .con {
-    gap: 4rem 0;
+  .section3 .left .text {
+    margin: 0;
   }
 
-  .section3 .con li {
-    width: 100%;
-    margin: 0 !important;
+  .section3 .con {
+    padding: 0 3vw;
+    gap: 3rem 3vw;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border: 1px solid #000;
+  }
+
+  .section3 .con li:nth-child(odd) {
+    margin-bottom: 0;
+  }
+
+  .section3 .con li:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .section3 .con li a {
+    display: flex;
+    padding: 0;
     flex-direction: column;
   }
 
   .section3 .con li a>p {
+    /* width: ; */
     width: 100%;
-    height: auto;
+    border: 1px solid #000;
+    border-radius: 2rem;
   }
 
   .section3 .con li .text {
