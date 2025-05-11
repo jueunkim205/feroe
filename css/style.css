@@ -624,6 +624,7 @@ header nav.on .btns span {
   width: 100%;
   max-width: 1400px;
   margin: 10rem auto 0;
+  padding: 0 3rem;
 }
 
 .section2 .wrap {
@@ -631,7 +632,6 @@ header nav.on .btns span {
   display: flex;
   height: 100vh;
   gap: 3rem;
-  padding: 0 3rem;
   box-sizing: border-box;
 }
 
@@ -813,7 +813,7 @@ section .left .text p:last-child {
 }
 
 .section3 .left .text {
-  margin: 13rem 1vw 0 2vw;
+  margin-top: 13rem;
 }
 
 .section3 .con {
@@ -838,9 +838,13 @@ section .left .text p:last-child {
   margin-top: 10rem;
 }
 
+.section3 .con li a {
+  width: 100%;
+}
+
 .section3 .con li a>p {
   position: relative;
-  width: 40rem;
+  width: 100%;
   height: 35rem;
   overflow: hidden;
   border-radius: 5rem 5rem 5rem 0;
@@ -891,14 +895,12 @@ section .left .text p:last-child {
 .section3 .con li:hover a>p::before {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
-  /* 호버 시 나타남 */
 }
 
 .section3 .con li:hover a>p::after {
   transform: translate(-50%, -50%) rotate(360deg);
   color: #fff;
   opacity: 1;
-  /* 호버 시 나타남 */
 }
 
 .section3 .con li .text {
@@ -1014,45 +1016,50 @@ path {
   }
 }
 
+.section4 {
+  background: var(--maincolor);
+}
+
 .section4 .wrap {
   display: flex;
   gap: 4rem;
   max-width: 1400px;
   margin: 0 auto;
   padding: 10rem 2rem;
-  background: var(--maincolor);
   flex-wrap: wrap;
 }
 
 .section4 .left {
+  position: relative;
   flex: 1;
-  min-width: 320px;
-  max-width: 500px;
   background: #fff;
   border-radius: 2rem;
+  padding: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.section4 .left a {
-  display: block;
-  color: inherit;
-  text-align: center;
-  padding: 2rem;
-}
-
 .section4 .left .img-wrap {
   width: 100%;
-  height: 240px;
+  height: 100%;
   overflow: hidden;
   border-radius: 1rem;
-  margin-bottom: 1.5rem;
 }
 
 .section4 .left .img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(70%);
+}
+
+.section4 .left .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  text-align: center;
+  transform: translate(-50%, -50%);
 }
 
 .section4 .left h3 {
@@ -1062,7 +1069,6 @@ path {
 
 .section4 .left p {
   font-size: 1.4rem;
-  color: #444;
 }
 
 .section4 .left .go {
@@ -1071,7 +1077,6 @@ path {
   font-size: 1.4rem;
   padding: 0.6rem 1.5rem;
   border: 1px solid #fff;
-  color: #fff;
   border-radius: 2rem;
   background: transparent;
   transition: 0.3s ease;
@@ -1087,7 +1092,6 @@ path {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 3rem;
-  padding: 1rem 0;
   list-style: none;
 }
 
@@ -1109,7 +1113,9 @@ path {
   height: 80px;
   margin: 0 auto 1.5rem;
   border-radius: 50%;
-  background: #f9f9f9;
+  /* background: #f5f5f5; */
+  border: 1px solid #009fe36e;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1341,6 +1347,7 @@ footer .down .right li:hover a {
    - 1024px 이하 / 768px 이하 대응
    ============================ */
 @media screen and (max-width: 1024px) {
+
   .section2 .wrap {
     flex-direction: column;
     height: auto;
@@ -1352,7 +1359,7 @@ footer .down .right li:hover a {
   }
 
   .section2 .left .tag {
-    width: 80%;
+    width: 55%;
     margin: 3rem auto;
   }
 
@@ -1393,7 +1400,7 @@ footer .down .right li:hover a {
 
   .section3 .wrap {
     flex-direction: column;
-    padding-top: 5rem;
+    padding-top: 10rem;
   }
 
   .section3 .left {
@@ -1409,11 +1416,13 @@ footer .down .right li:hover a {
   }
 
   .section3 .con {
-    padding: 0 3vw;
     gap: 3rem 3vw;
     justify-content: space-between;
     box-sizing: border-box;
-    border: 1px solid #000;
+  }
+
+  .section3 .con li {
+    width: calc(50% - 1.5vw);
   }
 
   .section3 .con li:nth-child(odd) {
@@ -1424,19 +1433,6 @@ footer .down .right li:hover a {
     margin-top: 0;
   }
 
-  .section3 .con li a {
-    display: flex;
-    padding: 0;
-    flex-direction: column;
-  }
-
-  .section3 .con li a>p {
-    /* width: ; */
-    width: 100%;
-    border: 1px solid #000;
-    border-radius: 2rem;
-  }
-
   .section3 .con li .text {
     padding-left: 0;
     text-align: center;
@@ -1444,7 +1440,6 @@ footer .down .right li:hover a {
 
   .section4 .wrap {
     flex-direction: column;
-    padding: 6rem 2rem;
   }
 
   .section4 .left {
@@ -1506,5 +1501,4 @@ footer .down .right li:hover a {
   .section4 .right li {
     padding: 1.5rem;
   }
-}
 }
