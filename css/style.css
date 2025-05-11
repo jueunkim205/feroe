@@ -565,7 +565,7 @@ header nav.on .btns span {
 }
 
 .section1 ul li a p:last-child {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 .section1 ul li p img {
@@ -1326,10 +1326,17 @@ footer .down .right li:hover a {
 
   .section1 ul li {
     width: calc(100% / 3);
+    height: 11rem;
   }
 
   .section1 ul li a p:first-child {
     display: none;
+  }
+
+  .section1 ul li a p:last-child {
+    font-size: 3rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid transparent;
   }
 
   .section1 ul li:hover a p:last-child {
@@ -1450,6 +1457,31 @@ footer .down .right li:hover a {
 }
 
 @media screen and (max-width: 768px) {
+  .main_bg .container video {
+    display: none;
+    transform: translate(0);
+  }
+
+  .main_bg .container {
+    background: url(../images/bgimage.jpg) 30% center/cover no-repeat;
+  }
+
+  .main_bg #textType2 {
+    font-size: 4.3rem;
+  }
+
+  .section1 #playPauseBtn {
+    display: none;
+  }
+
+  .section1 ul li a p:last-child {
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
+    margin: 0 1rem;
+    font-size: 2.5rem;
+  }
+
   .section2 .left .tag {
     width: 100%;
     justify-content: center;
