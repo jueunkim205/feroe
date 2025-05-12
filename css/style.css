@@ -253,9 +253,9 @@ header nav .sub5 .right h2 a {
   text-align: center;
   letter-spacing: -1px;
   word-break: keep-all;
-  border: 1px solid var(--secondary2);
+  border: 1px solid var(--primary1);
   border-radius: 5rem;
-  background: linear-gradient(to right, var(--secondary2) 50%, #fff 50%);
+  background: linear-gradient(to right, var(--primary1) 50%, #fff 50%);
   background-size: 200% 100%;
   background-position: right;
   transition: all .35s ease-out;
@@ -275,6 +275,7 @@ header nav .sub5 .right li>a {
   justify-content: space-between;
   position: relative;
   font-size: 1.5rem;
+  color: #222;
   padding: .5rem 0 .5rem 2rem;
   box-sizing: border-box;
   border-radius: 2rem;
@@ -285,15 +286,15 @@ header nav .sub5 .right li>a {
 
 header nav .sub4 .right li>a:hover,
 header nav .sub5 .right li>a:hover {
-  color: var(--secondary2);
-  border: 1px solid var(--secondary2);
+  color: var(--primary1);
+  border: 1px solid var(--primary1);
 }
 
 header nav .sub4 .right li>a::after,
 header nav .sub5 .right li>a::after {
   position: absolute;
   content: '\f061';
-  color: var(--secondary2);
+  color: var(--primary2);
   font-size: 1.5rem;
   font-weight: 900;
   right: -2rem;
@@ -1173,8 +1174,6 @@ footer .wave-bg-2 {
 footer .wrap {
   width: 100%;
   color: #fff;
-  padding: 0 4rem;
-  margin: 5rem auto 0;
   position: relative;
   z-index: 2;
   padding: 3rem 4rem;

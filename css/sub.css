@@ -25,19 +25,12 @@ html {
 }
 
 :root {
-  /* rem의 기준 */
   font-size: 10px;
   --maincolor: #009ee3;
   /* Faroese Blue */
-  --primary1: #0065BD;
-  /* Faroese Blue */
-  --primary2: #014751;
-  /* Faroese Blue */
-  --secondary: #6B8E23;
+  --primary1: #6B8E23;
   /* Velvety Green */
-  --secondary2: #5C7259;
-  /* Velvety Green */
-  /* --secondary2: #5C7259; Velvety Green */
+  --primary2: #5C7259;
 }
 
 .wrap {
@@ -256,9 +249,9 @@ header nav .sub5 .right h2 a {
   text-align: center;
   letter-spacing: -1px;
   word-break: keep-all;
-  border: 1px solid var(--secondary2);
+  border: 1px solid var(--primary1);
   border-radius: 5rem;
-  background: linear-gradient(to right, var(--secondary2) 50%, #fff 50%);
+  background: linear-gradient(to right, var(--primary1) 50%, #fff 50%);
   background-size: 200% 100%;
   background-position: right;
   transition: all .35s ease-out;
@@ -278,6 +271,7 @@ header nav .sub5 .right li>a {
   justify-content: space-between;
   position: relative;
   font-size: 1.5rem;
+  color: #222;
   padding: .5rem 0 .5rem 2rem;
   box-sizing: border-box;
   border-radius: 2rem;
@@ -288,15 +282,15 @@ header nav .sub5 .right li>a {
 
 header nav .sub4 .right li>a:hover,
 header nav .sub5 .right li>a:hover {
-  color: var(--secondary2);
-  border: 1px solid var(--secondary2);
+  color: var(--primary1);
+  border: 1px solid var(--primary1);
 }
 
 header nav .sub4 .right li>a::after,
 header nav .sub5 .right li>a::after {
   position: absolute;
   content: '\f061';
-  color: var(--secondary2);
+  color: var(--primary2);
   font-size: 1.5rem;
   font-weight: 900;
   right: -2rem;
@@ -969,13 +963,12 @@ footer .wave-bg-2 {
 footer .wrap {
   width: 100%;
   color: #fff;
-  max-width: 1400px;
-  margin: 0 auto;
   position: relative;
   z-index: 2;
   padding: 3rem 4rem;
   box-sizing: border-box;
   border-top: 1px solid rgba(173, 216, 230, 0.3);
+  border-bottom: 1px solid rgba(173, 216, 230, 0.3);
   font-family: Pretendard, sans-serif;
 }
 
@@ -983,9 +976,6 @@ footer .wrap .up {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(173, 216, 230, 0.3);
 }
 
 footer .up .left {
@@ -996,7 +986,7 @@ footer .up .left {
 
 footer .left .footerlogo {
   height: 5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 footer .desc {
@@ -1034,6 +1024,10 @@ footer h3 {
   margin-bottom: 2rem;
 }
 
+footer .middle {
+  padding-left: 5vw;
+}
+
 footer .middle ul,
 footer .right .contact-list {
   list-style: none;
@@ -1043,6 +1037,7 @@ footer .right .contact-list {
 
 footer .middle ul li {
   margin-bottom: 1.5rem;
+  white-space: nowrap;
 }
 
 footer .middle ul a,
@@ -1113,9 +1108,8 @@ footer .right .contact-list li span {
 }
 
 footer .down {
-  max-width: 1400px;
-  padding: 0 3rem;
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 0 4rem;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -1123,12 +1117,22 @@ footer .down {
 
 footer .down .left {
   display: flex;
-  justify-content: center;
-  margin-bottom: 0;
 }
 
-footer .down .left a {
-  margin: 0 1rem;
+footer .down .left a:not(:last-child) {
+  position: relative;
+  margin-right: 5rem;
+}
+
+footer .down .left a:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: .1rem;
+  height: 70%;
+  background: rgba(204, 204, 204, 0.425);
 }
 
 footer .down .left span {
