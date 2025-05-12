@@ -403,7 +403,6 @@ header nav.on .btns span {
   width: 100%;
   height: 100%;
   z-index: -1;
-  /* sideMenu 내부 요소보다 아래 */
 }
 
 #sideMenu.on {
@@ -1180,6 +1179,7 @@ footer .wrap {
   padding: 2rem 4rem;
   box-sizing: border-box;
   border-top: 1px solid rgba(173, 216, 230, 0.3);
+  border-bottom: 1px solid rgba(173, 216, 230, 0.3);
   font-family: Pretendard, sans-serif;
 }
 
@@ -1187,9 +1187,6 @@ footer .wrap .up {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(173, 216, 230, 0.3);
 }
 
 footer .up .left {
@@ -1321,7 +1318,8 @@ footer .right .contact-list li span {
 }
 
 footer .down {
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 0 4rem;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -1329,12 +1327,22 @@ footer .down {
 
 footer .down .left {
   display: flex;
-  justify-content: center;
-  margin-bottom: 0;
 }
 
-footer .down .left a {
-  margin: 0 1rem;
+footer .down .left a:not(:last-child) {
+  position: relative;
+  margin-right: 5rem;
+}
+
+footer .down .left a:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: .1rem;
+  height: 70%;
+  background: rgba(204, 204, 204, 0.425);
 }
 
 footer .down .left span {
@@ -1356,7 +1364,6 @@ footer .down .left span {
 
 @media screen and (max-width: 1280px) {
   :root {
-    /* rem의 기준 */
     font-size: 8px;
   }
 
@@ -1550,9 +1557,12 @@ footer .down .left span {
     font-size: 2rem;
   }
 
+  #sideMenu {
+    transition: .5s ease;
+  }
+
   .main_bg .container video {
     display: none;
-    transform: translate(0);
   }
 
   .main_bg .container {
@@ -1609,7 +1619,7 @@ footer .down .left span {
     padding: 1.5rem;
   }
 
-  footer .wrap .up>div {
+  footer .wrap .up>div:not(:last-child) {
     border-bottom: 1px solid rgba(173, 216, 230, 0.3);
     padding: 2rem 0;
   }
@@ -1621,19 +1631,16 @@ footer .down .left span {
 
   footer .up .left {
     align-items: center;
-
   }
 
   footer .down {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-bottom: 5rem;
+    margin: 4rem 0;
   }
 
   footer .down .left {
     margin-bottom: 2rem;
-    flex-wrap: wrap;
-    gap: 1rem;
   }
+
 }
