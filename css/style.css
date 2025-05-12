@@ -1178,7 +1178,7 @@ footer .wrap {
   width: 100%;
   color: #fff;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 5rem auto 0;
   position: relative;
   z-index: 2;
   padding: 2rem 4rem;
