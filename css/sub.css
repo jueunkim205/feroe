@@ -116,7 +116,7 @@ header nav .mainMenu {
   padding-top: 1rem;
   display: flex;
   justify-content: center;
-  gap: 2vw;
+  gap: 1.8vw;
   flex: 1;
   box-sizing: border-box;
 }
@@ -363,7 +363,7 @@ header nav .btns {
 }
 
 header nav .btns span {
-  font-size: 30px;
+  font-size: 3rem;
   cursor: pointer;
   color: #fff;
 }
@@ -386,6 +386,71 @@ header nav.on .btns span {
 }
 
 
+/* ----------- 사이드메뉴 ----------- */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: Pretendard, sans-serif;
+  transform: translateX(100%);
+  transition: 1s ease;
+  z-index: 1000;
+  background: #fff;
+}
+
+#sideMenu.on .sideBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#sideMenu.on {
+  transform: translateX(0);
+}
+
+#sideMenu span {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  font-size: 6rem;
+  cursor: pointer;
+}
+
+#sideMenu>ul {
+  width: 85%;
+  margin: 30vh auto;
+  gap: 1vw;
+  display: flex;
+  font-size: 2.5rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+#sideMenu>ul>li {
+  width: calc((100% - 5vw) / 6);
+}
+
+#sideMenu>ul h2 {
+  margin-bottom: 1rem;
+}
+
+#sideMenu>ul a {
+  line-height: 2;
+  color: #222;
+}
+
+#sideMenu>ul a:hover {
+  border-bottom: 1px solid #333;
+}
+
+
+/* ----------- sub시작 ----------- */
 .title {
   position: absolute;
   top: 0;
@@ -401,6 +466,10 @@ header nav.on .btns span {
 
 .places {
   background: url(../images/subpage/title02.jpg) center 60%/cover no-repeat;
+}
+
+.board {
+  background: url(../images/subpage/title03.jpg) center 25%/cover no-repeat;
 }
 
 
@@ -867,6 +936,12 @@ section img {
 }
 
 
+/* ************ 자유게시판 *********** */
+#freeboard {
+  width: 70vw;
+  margin: 10rem auto;
+}
+
 footer {
   position: relative;
   overflow: hidden;
@@ -898,7 +973,7 @@ footer .wrap {
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
   box-sizing: border-box;
   border-top: 1px solid rgba(173, 216, 230, 0.3);
   font-family: Pretendard, sans-serif;
@@ -995,6 +1070,7 @@ footer .right .news-form {
   display: flex;
   margin-bottom: 2rem;
   font-size: 1.5rem;
+  width: 70%;
 }
 
 footer .right .news-form input {
@@ -1074,7 +1150,6 @@ footer .down .left span {
 
 @media screen and (max-width: 1280px) {
   :root {
-    /* rem의 기준 */
     font-size: 8px;
   }
 
@@ -1083,6 +1158,8 @@ footer .down .left span {
   }
 
   header nav .mainMenu {
+    padding-top: 0;
+    gap: .5vw;
     justify-content: flex-end;
   }
 
@@ -1090,7 +1167,6 @@ footer .down .left span {
   header nav .sub5 {
     padding: 0;
   }
-
 
   header nav .sub4 li>ul li a span,
   header nav .sub5 li>ul li a span {
@@ -1102,11 +1178,13 @@ footer .down .left span {
     padding: 1rem 2rem;
   }
 
-
   header nav .btns {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+    gap: 2rem;
+    margin-left: 3rem;
+  }
+
+  header nav .btns span {
+    font-size: 2.8rem;
   }
 }
 
@@ -1114,13 +1192,38 @@ footer .down .left span {
   header nav .mainMenu {
     display: none;
   }
+
+  #sideMenu>ul {
+    margin: 7vh auto;
+    gap: 2rem 0;
+  }
+
+  #sideMenu>ul>li {
+    width: 50%;
+  }
+
+  #sideMenu>ul h2 {
+    margin-bottom: .5rem;
+  }
 }
 
 
 @media screen and (max-width: 768px) {
 
+  header nav .btns {
+    gap: 2rem;
+    margin-left: 3rem;
+  }
 
-  footer .wrap .up>div {
+  #sideMenu>ul {
+    font-size: 2rem;
+  }
+
+  #sideMenu {
+    transition: .5s ease;
+  }
+
+  footer .wrap .up>div:not(:last-child) {
     border-bottom: 1px solid rgba(173, 216, 230, 0.3);
     padding: 2rem 0;
   }
@@ -1132,19 +1235,25 @@ footer .down .left span {
 
   footer .up .left {
     align-items: center;
+  }
 
+  footer .right .news-form {
+    width: 70%;
+  }
+
+  footer .right .contact-list li span {
+    width: 2rem;
+    margin-right: 2rem;
   }
 
   footer .down {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-bottom: 5rem;
+    margin: 4rem 0;
   }
 
   footer .down .left {
     margin-bottom: 2rem;
-    flex-wrap: wrap;
-    gap: 1rem;
   }
+
 }

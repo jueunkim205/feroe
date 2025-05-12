@@ -58,6 +58,7 @@ a {
 
 /* ----------- header ----------- */
 
+
 header {
   width: 100%;
 }
@@ -112,7 +113,7 @@ header nav .mainMenu {
   padding-top: 1rem;
   display: flex;
   justify-content: center;
-  gap: 2vw;
+  gap: 1.8vw;
   flex: 1;
   box-sizing: border-box;
 }
@@ -252,9 +253,9 @@ header nav .sub5 .right h2 a {
   text-align: center;
   letter-spacing: -1px;
   word-break: keep-all;
-  border: 1px solid var(--primary2);
+  border: 1px solid var(--secondary2);
   border-radius: 5rem;
-  background: linear-gradient(to right, var(--primary2) 50%, #fff 50%);
+  background: linear-gradient(to right, var(--secondary2) 50%, #fff 50%);
   background-size: 200% 100%;
   background-position: right;
   transition: all .35s ease-out;
@@ -284,15 +285,15 @@ header nav .sub5 .right li>a {
 
 header nav .sub4 .right li>a:hover,
 header nav .sub5 .right li>a:hover {
-  color: var(--primary2);
-  border: 1px solid var(--primary2);
+  color: var(--secondary2);
+  border: 1px solid var(--secondary2);
 }
 
 header nav .sub4 .right li>a::after,
 header nav .sub5 .right li>a::after {
   position: absolute;
   content: '\f061';
-  color: var(--primary2);
+  color: var(--secondary2);
   font-size: 1.5rem;
   font-weight: 900;
   right: -2rem;
@@ -359,7 +360,7 @@ header nav .btns {
 }
 
 header nav .btns span {
-  font-size: 30px;
+  font-size: 3rem;
   cursor: pointer;
   color: #fff;
 }
@@ -418,7 +419,7 @@ header nav.on .btns span {
 }
 
 #sideMenu>ul {
-  width: 80%;
+  width: 85%;
   margin: 30vh auto;
   gap: 1vw;
   display: flex;
@@ -428,7 +429,7 @@ header nav.on .btns span {
 }
 
 #sideMenu>ul>li {
-  width: calc((100% - 4vw) / 5);
+  width: calc((100% - 5vw) / 6);
 }
 
 #sideMenu>ul h2 {
@@ -1176,7 +1177,7 @@ footer .wrap {
   margin: 5rem auto 0;
   position: relative;
   z-index: 2;
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
   box-sizing: border-box;
   border-top: 1px solid rgba(173, 216, 230, 0.3);
   border-bottom: 1px solid rgba(173, 216, 230, 0.3);
@@ -1276,6 +1277,7 @@ footer .right .news-form {
   display: flex;
   margin-bottom: 2rem;
   font-size: 1.5rem;
+  width: 70%;
 }
 
 footer .right .news-form input {
@@ -1372,6 +1374,8 @@ footer .down .left span {
   }
 
   header nav .mainMenu {
+    padding-top: 0;
+    gap: .5vw;
     justify-content: flex-end;
   }
 
@@ -1390,10 +1394,13 @@ footer .down .left span {
     padding: 1rem 2rem;
   }
 
-
   header nav .btns {
-    align-items: center;
-    gap: 3rem;
+    gap: 2rem;
+    margin-left: 3rem;
+  }
+
+  header nav .btns span {
+    font-size: 2.8rem;
   }
 }
 
@@ -1419,7 +1426,6 @@ footer .down .left span {
     width: calc(100% / 3);
     height: 11rem;
   }
-
 
   .section1 ul li a p:first-child {
     display: none;
@@ -1631,6 +1637,15 @@ footer .down .left span {
 
   footer .up .left {
     align-items: center;
+  }
+
+  footer .right .news-form {
+    width: 70%;
+  }
+
+  footer .right .contact-list li span{
+    width: 2rem;
+    margin-right: 2rem;
   }
 
   footer .down {
