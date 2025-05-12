@@ -621,7 +621,8 @@ header nav.on .btns span {
 
 /* 클릭 순간 효과 */
 #topbtn.clicked {
-  box-shadow: 0 0 0 10px #0074d99c, 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: .5rem solid var(--maincolor);
+  box-shadow: none;
 }
 
 
