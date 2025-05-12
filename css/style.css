@@ -1173,7 +1173,7 @@ footer .wave-bg-2 {
 footer .wrap {
   width: 100%;
   color: #fff;
-  max-width: 1400px;
+  padding: 0 4rem;
   margin: 5rem auto 0;
   position: relative;
   z-index: 2;
@@ -1200,7 +1200,7 @@ footer .up .left {
 
 footer .left .footerlogo {
   height: 5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 footer .desc {
@@ -1238,6 +1238,10 @@ footer h3 {
   margin-bottom: 2rem;
 }
 
+footer .middle {
+  padding-left: 5vw;
+}
+
 footer .middle ul,
 footer .right .contact-list {
   list-style: none;
@@ -1247,6 +1251,7 @@ footer .right .contact-list {
 
 footer .middle ul li {
   margin-bottom: 1.5rem;
+  white-space: nowrap;
 }
 
 footer .middle ul a,
@@ -1316,7 +1321,6 @@ footer .right .contact-list li span {
 }
 
 footer .down {
-  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
