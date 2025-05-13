@@ -462,8 +462,12 @@ header nav.on .btns span {
   background: url(../images/subpage/title02.jpg) center 60%/cover no-repeat;
 }
 
-.board {
+.boardpage {
   background: url(../images/subpage/title03.jpg) center 25%/cover no-repeat;
+}
+
+.loginpage {
+  background: url(../images/subpage/title04.jpg) center 25%/cover no-repeat;
 }
 
 
@@ -981,7 +985,7 @@ footer .wrap .up {
 footer .up .left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 footer .left .footerlogo {
