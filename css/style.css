@@ -726,6 +726,7 @@ section .left .text p:last-child {
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0 5px 5px rgba(0, 58, 107, .2);
+  border-radius: 2rem;
 }
 
 .section2 .swiper-slide a div {
@@ -784,6 +785,7 @@ section .left .text p:last-child {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  border-radius: 2rem;
 }
 
 .section2 .big.fade {
