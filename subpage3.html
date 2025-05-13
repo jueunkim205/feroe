@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visit Faroe Islands</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
@@ -38,8 +39,6 @@
 </head>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<!-- 관광명소리스트 만들기 -->
-
 <body>
 
   <div class="wrap">
@@ -48,7 +47,7 @@
         <a href="index.html" class="logo"><img src="./images/logo.png" alt="사이트 로고">
           <h1>Visit<br>Faroe Islands</h1>
         </a>
-
+  
         <ul class="mainMenu">
           <li><a href="./subpage1.html">엑티비티</a></li>
           <li><a href="./subpage3.html">관광명소</a></li>
@@ -57,7 +56,7 @@
           <li><a href="https://visitfaroeislands.com/en/plan-your-stay/need-a-little-help">여행도우미</a></li>
           <li><a href="./freeboard.html">자유게시판</a></li>
         </ul>
-
+  
         <ul class="subMenu sub1">
           <!-- li마다 아이콘, 글자, 배경 -->
           <li><a href="https://visitfaroeislands.com/en/see-do/activities/adventure-sports/freshwater-angling">
@@ -85,10 +84,9 @@
               </div>
             </a></li>
         </ul>
-
+  
         <ul class="subMenu sub2">
           <li><a href="./subpage4.html">
-              <!-- https://visitfaroeislands.com/en/whatson/places/place/kallurin0 -->
               <div>
                 <span>칼루린 곶</span>
               </div>
@@ -109,7 +107,7 @@
               </div>
             </a></li>
         </ul>
-
+  
         <ul class="subMenu sub3">
           <li><a href="https://visitfaroeislands.com/en/whatson/events/event/g-festival-july-17-19">
               <div>
@@ -133,7 +131,7 @@
               </div>
             </a></li>
         </ul>
-
+  
         <div class="subMenu sub4">
           <div class="left">
             <div class="text">
@@ -188,7 +186,7 @@
             </li>
           </ul>
         </div>
-
+  
         <div class="subMenu sub5">
           <div class="left">
             <div class="text">
@@ -229,7 +227,7 @@
               </ul>
             </li>
             <li>
-              <h2><a href="https://visitfaroeislands.com/en/plan-your-stay/staying-here">숙박 정보</a></h2>
+              <h2><a href="https://visitfaroeislands.com/en/plan-your-stay/staying-here">숙박 시설</a></h2>
               <ul>
                 <li><a href="https://visitfaroeislands.com/en/plan-your-stay/staying-here/hotels">호텔</a></li>
                 <li><a href="https://visitfaroeislands.com/en/plan-your-stay/staying-here/guesthouses-b-bs">게스트하우스 &
@@ -267,15 +265,17 @@
             </li>
           </ul>
         </div>
-
+  
         <div class="btns">
-          <span class="material-symbols-outlined">
-            person
-          </span>
+          <a href="./mylogin.html">
+            <span class="material-symbols-outlined">
+              person
+            </span>
+          </a>
           <span class="material-symbols-outlined">
             search
           </span>
-          <span class="material-symbols-outlined">
+          <span class="material-symbols-outlined hamburger">
             menu
           </span>
         </div>
@@ -331,7 +331,9 @@
 
         <div class="modal">
           <div class="modalWrap">
-            <span class="mClose">X</span>
+            <span class="material-symbols-outlined mClose">
+              close
+              </span>
             <div class="up">
               <div class="sub3swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -425,8 +427,8 @@
       <div class="sideBg"></div>
     </div>
 
+    
     <footer>
-      <!-- 물결 효과 배경 -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-bg">
         <path fill="#ffffff" fill-opacity="1"
           d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -439,9 +441,7 @@
       </svg>
 
       <div class="wrap">
-        <!-- 상단 푸터 영역 -->
         <div class="up">
-          <!-- 로고 및 브랜드 정보 -->
           <div class="left">
             <a href="index.html" class="footerlogo"><img src="./images/footer/footerlogo.png" alt="사이트 로고">
               <h1>Visit<br>Faroe Islands</h1>
@@ -480,11 +480,11 @@
             <div>
               <h3>여행 정보</h3>
               <ul>
-                <li><a href="#">관광 명소</a></li>
-                <li><a href="#">숙박 시설</a></li>
-                <li><a href="#">교통 정보</a></li>
-                <li><a href="#">맛집 탐방</a></li>
-                <li><a href="#">현지 문화</a></li>
+                <li><a href="./subpage3.html">관광 명소</a></li>
+                <li><a href="https://visitfaroeislands.com/en/plan-your-stay/staying-here">숙박 시설</a></li>
+                <li><a href="https://visitfaroeislands.com/en/plan-your-stay/getting-around">교통 정보</a></li>
+                <li><a href="https://visitfaroeislands.com/en/about-vfi/people-society/faroese-food">맛집 탐방</a></li>
+                <li><a href="https://visitfaroeislands.com/en/about-vfi/people-society">현지 문화</a></li>
               </ul>
             </div>
             <div>
@@ -530,17 +530,16 @@
             </div>
           </div>
         </div>
-        <!-- 하단 푸터 영역 -->
-        <div class="down">
-          <div class="left">
-            <a href="#">이용약관</a>
-            <a href="#">개인정보처리방침</a>
-            <a href="#">쿠키 정책</a>
-            <a href="#">접근성</a>
-          </div>
-          <div class="copyright">
-            © 2025 Visit Faroe Islands. All rights reserved.
-          </div>
+      </div>
+      <div class="down">
+        <div class="left">
+          <a href="https://visitfaroeislands.com/en/about1/about0/privacy-policy">이용약관</a>
+          <a href="https://visitfaroeislands.com/en/about1/about0/privacy-policy">개인정보처리방침</a>
+          <a href="https://visitfaroeislands.com/en/about-vfi/about0/privacy-policy">쿠키 정책</a>
+          <a href="https://visitfaroeislands.com/en/about-vfi/about0/privacy-policy">접근성</a>
+        </div>
+        <div class="copyright">
+          © 2025 Visit Faroe Islands. All rights reserved.
         </div>
       </div>
     </footer>

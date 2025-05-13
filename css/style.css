@@ -759,7 +759,7 @@ section .left .text p:last-child {
   gap: .5rem;
   bottom: 52vh;
   right: 45px;
-  width: 11rem;
+  width: 10rem;
   height: 50px;
   box-sizing: border-box;
   z-index: 50;
@@ -1403,6 +1403,10 @@ footer .down .left span {
   header nav .btns span {
     font-size: 2.8rem;
   }
+
+  .section2 #control {
+    width: 10.5rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -1599,7 +1603,7 @@ footer .down .left span {
 
   .section2 #control {
     width: 80%;
-    bottom: 2.5rem;
+    bottom: 4rem;
   }
 
   .section3 .con {
@@ -1641,7 +1645,7 @@ footer .down .left span {
   }
 
   footer .right .news-form {
-    width: 70%;
+    width: 100%;
   }
 
   footer .right .contact-list li span{
