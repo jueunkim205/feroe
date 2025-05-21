@@ -1,98 +1,3 @@
-$(function () {
-  /******************** header ********************** */
-  const HeaderimgSources = {
-    sub1: [
-      "./images/submenu/sub101.png",
-      "./images/submenu/sub102.png",
-      "./images/submenu/sub103.jpg",
-      "./images/submenu/sub_last.png",
-    ],
-    sub2: [
-      "./images/submenu/sub201.jpg",
-      "./images/submenu/sub202.jpg",
-      "./images/submenu/sub203.jpg",
-      "./images/submenu/sub_last.png",
-    ],
-    sub3: [
-      "./images/submenu/sub301.jpg",
-      "./images/submenu/sub302.jpg",
-      "./images/submenu/sub303.jpg",
-      "./images/submenu/sub_last.png",
-    ],
-  };
-
-  $.each(HeaderimgSources, function (className, srcArray) {
-    $("." + className + " li").each(function (index) {
-      if (srcArray[index]) {
-        $(this).css("background-image", "url(" + srcArray[index] + ")");
-      }
-    });
-  });
-
-  // submenu
-
-  let subMenu = document.querySelectorAll(".subMenu");
-  let mainMenuLi = document.querySelectorAll(".mainMenu li");
-
-  // 전체 서브메뉴 가리기
-  function noneSubMenu() {
-    subMenu.forEach(function (v) {
-      v.classList.remove("on");
-    });
-
-    mainMenuLi.forEach(function (v) {
-      v.classList.remove("on");
-    });
-  }
-
-  noneSubMenu();
-
-  mainMenuLi.forEach(function (v, k) {
-    v.addEventListener("mouseenter", function () {
-      noneSubMenu();
-      subMenu[k].classList.add("on");
-      this.classList.add("on");
-    });
-  });
-
-  document.querySelector("nav").addEventListener("mouseenter", function () {
-    this.classList.add("on");
-  });
-  document.querySelector("nav").addEventListener("mouseleave", function () {
-    noneSubMenu();
-    this.classList.remove("on");
-  });
-});
-
-/******************** aos ********************** */
-
-// aos
-AOS.init({
-  once: false,
-});
-
-
-/******************** sidemenu ********************** */
-let sideBtn = document.querySelector("nav .btns .hamburger");
-let sideMenu = document.querySelector("#sideMenu");
-let sidecloseBtn = document.querySelector("#sideMenu span");
-let sideBg = document.querySelector("#sideMenu .sideBg");
-
-sideBtn.onclick = function () {
-  sideMenu.classList.add("on");
-};
-
-sidecloseBtn.onclick = function () {
-  sideMenu.classList.remove("on");
-};
-
-// sideBg 클릭 시 사이드메뉴 닫기
-sideBg.onclick = function () {
-  sideMenu.classList.remove("on");
-};
-
-
-
 /******************** sub3 ********************** */
 
 // 장소 설명 및 이미지 데이터
@@ -154,7 +59,7 @@ const sub3Data = [
 const liList = document.querySelectorAll(".sub3 ul li");
 const modal = document.querySelector(".sub3 .modal");
 const modalWrap = modal.querySelector(".sub3 .modalWrap");
-const closeBtn = modal.querySelector(".modal .mClose");
+const subCloseBtn = modal.querySelector(".modal .mClose");
 const modalTitle = modal.querySelector(".modal .down h2");
 const modalDesc = modal.querySelector(".modal .down p");
 const modalLink = document.querySelector(".modal .down a");
@@ -223,7 +128,7 @@ liList.forEach((li, index) => {
 });
 
 // X 버튼 클릭 시 닫기
-closeBtn.addEventListener("click", () => {
+subCloseBtn.addEventListener("click", () => {
   modal.classList.remove("active");
   document.body.style.overflow = "";
 });

@@ -1,0 +1,786 @@
+@charset "utf-8";
+
+/* header, footer, sidemenu */
+
+/* font */
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('../fonts/GowunBatang-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  /* 웹폰트 로딩 지연 시, 먼저 시스템 폰트를 보여주고, 나중에 폰트가 로딩되면 교체 */
+}
+
+@font-face {
+  font-family: 'KimjungchulScript-Bold';
+  src: url('../fonts/KimjungchulScript-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 10px;
+  --maincolor: #009ee3;
+  /* Faroese Blue */
+  --primary1: #6B8E23;
+  /* Velvety Green */
+  --primary2: #5C7259;
+}
+
+.wrap {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: Pretendard, sans-serif;
+}
+
+.left .text {
+  font-weight: bold;
+  letter-spacing: -1px;
+  word-break: keep-all;
+  font-family: 'GowunBatang-Regular', sans-serif;
+  text-shadow: 1rem 1rem 2rem rgba(10, 59, 107, 0.3);
+}
+
+
+
+/* ----------- header ----------- */
+
+
+header {
+  width: 100%;
+}
+
+header nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4rem;
+  height: 10rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-image: linear-gradient(rgba(64, 64, 64, 0.90), transparent);
+  transition: .5s;
+  z-index: 10;
+}
+
+header nav .logo,
+footer .left .footerlogo {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  color: #000;
+}
+
+header nav .logo p,
+footer .left .footerlogo p {
+  font-family: "Inter", sans-serif;
+  margin-left: 1.5rem;
+  font-size: 3rem;
+  letter-spacing: -.2rem;
+  font-weight: 400;
+  line-height: .9;
+  color: #fff;
+  transition: .5s;
+}
+
+header nav .logo img,
+footer .left .footerlogo img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+header nav .mainMenu {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.8vw;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+header nav .mainMenu li {
+  text-align: center;
+}
+
+header nav .mainMenu>li a {
+  position: relative;
+  display: block;
+  padding: 3px 15px;
+  font-size: 2.3rem;
+  font-family: Pretendard, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  transition: .3s;
+}
+
+header nav .mainMenu li.on>a:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -50%;
+  transform: translateX(50%);
+  width: 100%;
+  height: 100%;
+  background: var(--maincolor);
+  opacity: .3;
+  animation: after .5s;
+}
+
+header nav .subMenu {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 350px;
+  left: 0;
+  top: 100%;
+  font-family: Pretendard, sans-serif;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+header nav .sub5 {
+  height: 600px;
+}
+
+header nav .subMenu.on {
+  transition: .3s linear;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 배경깔기 */
+header nav .subMenu>li {
+  width: 25%;
+  background-size: cover;
+  background-position: center;
+}
+
+header nav .sub4,
+header nav .sub5 {
+  display: flex;
+  background: #ffffff;
+  box-sizing: border-box;
+
+}
+
+header nav .sub4 .left {
+  width: 25%;
+}
+
+header nav .sub5 .left {
+  width: 30%;
+}
+
+header nav .subMenu .left {
+  position: relative;
+  background: url(../images/bgimage.jpg) center/cover no-repeat;
+}
+
+header nav .subMenu .left .text {
+  position: absolute;
+  right: 10%;
+  top: 6rem;
+  text-align: right;
+  color: #000;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+header nav .subMenu .left .text h2 {
+  font-family: 'GowunBatang-Regular', sans-serif;
+  font-size: 2.5rem;
+}
+
+header nav .sub4 .right,
+header nav .sub5 .right {
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex: 1;
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+header nav .sub5 .right {
+  padding-right: 20rem;
+}
+
+header nav .sub5 .right {
+  flex-wrap: wrap;
+}
+
+header nav .sub4 .right>li,
+header nav .sub5 .right>li {
+
+  transition: background .5s;
+  box-sizing: border-box;
+}
+
+header nav .sub4 .right>li {
+  flex: 1;
+  padding: 3%;
+}
+
+header nav .sub5 .right>li {
+  width: calc(100% / 3);
+  padding: 3% 3% 2%;
+}
+
+header nav .sub4 .right h2 a,
+header nav .sub5 .right h2 a {
+  font-size: 2.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -1px;
+  word-break: keep-all;
+  border: 1px solid var(--primary1);
+  border-radius: 5rem;
+  background: linear-gradient(to right, var(--primary1) 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: all .35s ease-out;
+  box-sizing: border-box;
+  font-family: Pretendard, sans-serif;
+}
+
+header nav .sub4 .right li:hover h2 a,
+header nav .sub5 .right li:hover h2 a {
+  background-position: left;
+  color: #fff;
+}
+
+header nav .sub4 .right li>a,
+header nav .sub5 .right li>a {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: 1.5rem;
+  color: #222;
+  padding: .5rem 0 .5rem 2rem;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: .3s;
+  overflow: hidden;
+}
+
+header nav .sub4 .right li>a:hover,
+header nav .sub5 .right li>a:hover {
+  color: var(--primary1);
+  border: 1px solid var(--primary1);
+}
+
+header nav .sub4 .right li>a::after,
+header nav .sub5 .right li>a::after {
+  position: absolute;
+  content: '\f061';
+  color: var(--primary2);
+  font-size: 1.5rem;
+  font-weight: 900;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 6 Free";
+}
+
+header nav .sub4 .right li>a:hover::after,
+header nav .sub5 .right li>a:hover::after {
+  right: 2rem;
+  transition: .3s;
+}
+
+header nav .subMenu>li:not(:last-child) {
+  border-right: .3px solid #ccc;
+}
+
+header nav .subMenu li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+header nav .subMenu li a div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 4rem;
+  text-align: center;
+  box-sizing: border-box;
+  transition: padding-top .3s;
+  background: #00000040;
+}
+
+header nav .subMenu li:hover a div {
+  padding-top: 0;
+  background: #00000083;
+}
+
+header nav .subMenu li a div img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+header nav .subMenu li a div span {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+header nav .btns {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+header nav .btns a {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #fff;
+  gap: .5rem;
+}
+
+header nav .btns span {
+  font-size: 3rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+/* hover 할때마다 클래스추가 */
+header nav.on {
+  background: #fff;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.12);
+}
+
+header nav.on .logo img {
+  filter: none;
+}
+
+header nav.on .btns a,
+header nav.on .logo p,
+header nav.on .mainMenu>li a,
+header nav.on .btns span {
+  color: #000;
+}
+
+/* ----------- 사이드메뉴 ----------- */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: Pretendard, sans-serif;
+  transform: translateX(100%);
+  transition: 1s ease;
+  z-index: 1000;
+  background: #fff;
+}
+
+#sideMenu.on .sideBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#sideMenu.on {
+  transform: translateX(0);
+}
+
+#sideMenu span {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  font-size: 6rem;
+  cursor: pointer;
+}
+
+#sideMenu>ul {
+  width: 85%;
+  margin: 30vh auto;
+  gap: 1vw;
+  display: flex;
+  font-size: 2.5rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+#sideMenu>ul>li {
+  width: calc((100% - 5vw) / 6);
+}
+
+#sideMenu>ul h2 {
+  margin-bottom: 1rem;
+}
+
+#sideMenu>ul a {
+  line-height: 2;
+  color: #222;
+}
+
+#sideMenu>ul a:hover {
+  border-bottom: 1px solid #333;
+}
+
+
+
+footer h3 {
+  font-family: Pretendard, sans-serif !important;
+}
+
+footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to top, #0074D9, #009ee3);
+  box-sizing: border-box;
+}
+
+footer .wave-bg,
+footer .wave-bg-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+footer .wave-bg {
+  opacity: 0.1;
+}
+
+footer .wave-bg-2 {
+  opacity: 0.05;
+}
+
+footer .wrap {
+  width: 100%;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  padding: 3rem 4rem;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(173, 216, 230, 0.3);
+  border-bottom: 1px solid rgba(173, 216, 230, 0.3);
+  font-family: Pretendard, sans-serif;
+}
+
+footer .wrap .up {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+footer .up .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+footer .left .footerlogo {
+  height: 5rem;
+  margin-bottom: 5rem;
+}
+
+footer .desc {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  word-break: keep-all;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+footer .left .sns {
+  display: flex;
+  gap: 2rem;
+}
+
+footer .left .sns p {
+  width: 3rem;
+  height: 3rem;
+}
+
+footer .left .sns p img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer .middle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+footer h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+footer .middle {
+  padding-left: 5vw;
+}
+
+footer .middle ul,
+footer .right .contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .middle ul li {
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+
+footer .middle ul a,
+footer .right .contact-list li,
+footer .down .left a,
+footer .down .copyright {
+  font-size: 1.5rem;
+  color: rgba(224, 247, 255, 0.9);
+  transition: color 0.3s ease;
+}
+
+footer .middle ul a {
+  border-bottom: 1px solid transparent;
+  transition: border-bottom .3s;
+  padding-bottom: .3rem;
+}
+
+footer .middle ul a:hover,
+footer .down .left a:hover {
+  color: white;
+  border-bottom: 1px solid #fff;
+}
+
+footer .right .news-form {
+  display: flex;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  width: 70%;
+}
+
+footer .right .news-form input {
+  flex-grow: 1;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0rem 0 0 0rem;
+}
+
+footer .right input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.5);
+}
+
+footer .right .news-form button {
+  background-color: #004080;
+  white-space: nowrap;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0 0rem 0rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+footer .right .news-form button:hover {
+  background-color: #00509E;
+}
+
+footer .right .contact-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+footer .right .contact-list li span {
+  display: block;
+  width: 2.7rem;
+  margin-right: .5rem;
+}
+
+footer .down {
+  margin: 2rem auto;
+  padding: 0 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+footer .down .left {
+  display: flex;
+}
+
+footer .down .left a:not(:last-child) {
+  position: relative;
+  margin-right: 5rem;
+}
+
+footer .down .left a:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: .1rem;
+  height: 70%;
+  background: rgba(204, 204, 204, 0.425);
+}
+
+footer .down .left span {
+  color: rgba(173, 216, 230, 0.6);
+  margin: 0 1rem;
+}
+
+
+
+/* ----------- 반응형 ----------- */
+@media screen and (max-width: 1280px) {
+  :root {
+    font-size: 8px;
+  }
+
+  header nav {
+    padding: 0 15px;
+  }
+
+  header nav .mainMenu {
+    padding-top: 0;
+    gap: .5vw;
+    justify-content: flex-end;
+  }
+
+  header nav .sub4,
+  header nav .sub5 {
+    padding: 0;
+  }
+
+  header nav .sub4 li>ul li a span,
+  header nav .sub5 li>ul li a span {
+    display: none;
+  }
+
+  header nav .sub4 li>ul li a,
+  header nav .sub5 li>ul li a {
+    padding: 1rem 2rem;
+  }
+
+  header nav .btns {
+    gap: 2rem;
+    margin-left: 3rem;
+  }
+
+  header nav .btns span {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header nav .mainMenu {
+    display: none;
+  }
+
+  #sideMenu>ul {
+    margin: 7vh auto;
+    gap: 2rem 0;
+  }
+
+  #sideMenu>ul>li {
+    width: 50%;
+  }
+
+  #sideMenu>ul h2 {
+    margin-bottom: .5rem;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  header nav .btns {
+    gap: 2rem;
+    margin-left: 3rem;
+  }
+
+  #sideMenu>ul {
+    font-size: 2rem;
+  }
+
+  #sideMenu {
+    transition: .5s ease;
+  }
+
+  footer .wrap .up>div:not(:last-child) {
+    border-bottom: 1px solid rgba(173, 216, 230, 0.3);
+    padding: 2rem 0;
+  }
+
+  footer .wrap .up {
+    grid-template-columns: 1fr;
+    border-bottom: none;
+  }
+
+  footer .up .left {
+    align-items: center;
+  }
+
+  footer .right .news-form {
+    width: 70%;
+  }
+
+  footer .right .contact-list li span {
+    width: 2rem;
+    margin-right: 2rem;
+  }
+
+  footer .down {
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 0;
+  }
+
+  footer .down .left {
+    margin-bottom: 2rem;
+  }
+
+}
