@@ -41,14 +41,14 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <body>
-  <?php include 'subhead.php'; ?>
+  <? include 'subhead.php' ?>
 
   <main class="sub1">
     <div class="title loginpage">
       <h1>커뮤니티</h1>
     </div>
     <div id="freeboard">
-      <div id="freeboard"><iframe src="http://jueunkim.dothome.co.kr/gnuboard5/bbs/login.php" id="iframe"
+      <div id="freeboard"><iframe src="https://jueunkim.dothome.co.kr/gnuboard5/bbs/login.php" id="iframe"
           style="width:100%" onload="Height();" frameborder="0" scrolling="no"></iframe></div>
     </div>
   </main>
@@ -56,7 +56,7 @@
 
   </div>
 
-  <?php include 'subtail.php'; ?>
+  <? include 'subtail.php' ?>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/core.js"></script>

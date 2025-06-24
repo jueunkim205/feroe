@@ -43,20 +43,20 @@
 <body>
 
   <div class="wrap">
-    <?php include 'subhead.php'; ?>
+    <? include 'subhead.php' ?>
 
     <main class="">
       <div class="title boardpage">
         <h1>자유게시판</h1>
       </div>
-      <div id="freeboard"><iframe src="http://jueunkim.dothome.co.kr/gnuboard5/bbs/board.php?bo_table=free" id="iframe"
+      <div id="freeboard"><iframe src="https://jueunkim.dothome.co.kr/gnuboard5/bbs/board.php?bo_table=free" id="iframe"
           style="width:100%" onload="Height();" frameborder="0" scrolling="no"></iframe></div>
     </main>
 
 
   </div>
 
-  <?php include 'subtail.php'; ?>
+  <? include 'subtail.php' ?>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
